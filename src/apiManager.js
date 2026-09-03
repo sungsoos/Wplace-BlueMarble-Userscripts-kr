@@ -195,7 +195,7 @@ export default class ApiManager {
     }
     // Updates the text content of the next level field
     const nextPixelElement = document.getElementById('bm-user-nextpixel');
-    if (nextPixelElement && nextPixelPluralElement) {
+    if (nextPixelElement) {
       nextPixelElement.textContent = new Intl.NumberFormat().format(nextLevelPixels);
     }
     const nextLevelElement = document.getElementById('bm-user-nextlevel');
