@@ -66,7 +66,7 @@
 <a href="" target="_blank" rel="noopener noreferrer"><img alt="최신 버전" src="https://img.shields.io/badge/Latest_Version-0.87.20-lightblue?style=flat&label=%EC%B5%9C%EC%8B%A0%20%EB%B2%84%EC%A0%84
 "></a>
 <a href="https://github.com/sungsoos/Wplace-BlueMarble-Userscripts-kr/releases" target="_blank" rel="noopener noreferrer"><img alt="최신 릴리즈" src="https://img.shields.io/github/v/release/sungsoos/Wplace-BlueMarble-Userscripts-kr?sort=semver&style=flat&label=%EC%B5%9C%EC%8B%A0%20%EB%A6%B4%EB%A6%AC%EC%A6%88&color=blue"></a>
-<a href="https://github.com/sungsoos/Wplace-BlueMarble-Userscripts-kr/blob/main/LICENSE.txt" target="_blank" rel="noopener noreferrer"><img alt="소프트웨어 라이선스: MPL-2.0" src="https://img.shields.io/badge/Software_License-MPL--2.0-slateblue?style=flat&label=%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%20%EB%9D%BC%EC%9D%B4%EC%84%A0%EC%8A%A4"></a>
+<a href="https://github.com/sungsoos/Wplace-BlueMarble-Userscripts-kr/blob/custom-improve/LICENSE.txt" target="_blank" rel="noopener noreferrer"><img alt="소프트웨어 라이선스: MPL-2.0" src="https://img.shields.io/badge/Software_License-MPL--2.0-slateblue?style=flat&label=%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%20%EB%9D%BC%EC%9D%B4%EC%84%A0%EC%8A%A4"></a>
 <a href="https://discord.gg/tpeBPy46hf" target="_blank" rel="noopener noreferrer"><img alt="연락하기" src="https://img.shields.io/badge/%EC%97%B0%EB%9D%BD%ED%95%98%EA%B8%B0-gray?style=flat&logo=Discord&logoColor=white&logoSize=auto&labelColor=cornflowerblue"></a>
 <a href="https://bluemarble.lol/" target="_blank" rel="noopener noreferrer"><img alt="블루 마블 웹사이트" src="https://img.shields.io/badge/%EB%B8%94%EB%A3%A8%20%EB%A7%88%EB%B8%94%20%EC%9B%B9%EC%82%AC%EC%9D%B4%ED%8A%B8-Camille_Daguin-blue?style=flat&logo=globe&logoColor=white"></a>
 <a href="" target="_blank" rel="noopener noreferrer"><img alt="WakaTime" src="https://img.shields.io/badge/%EC%BD%94%EB%94%A9%20%EC%8B%9C%EA%B0%84-124hrs_4mins-blue?style=flat&logo=wakatime&logoColor=black&logoSize=auto&labelColor=white"></a>
@@ -135,7 +135,7 @@
     <summary>
       <b>이 프로젝트에 기여하고 싶어요.</b> <sup>(눌러서 펼치기)</sup>
     </summary>
-    <a href="https://github.com/sungsoos/Wplace-BlueMarble-Userscripts-kr/blob/main/docs/CONTRIBUTING.md">여기를 눌러</a> 기여 가이드를 읽으세요.
+    <a href="https://github.com/sungsoos/Wplace-BlueMarble-Userscripts-kr/blob/custom-improve/docs/CONTRIBUTING.md">여기를 눌러</a> 기여 가이드를 읽으세요.
   </details>
   <details>
     <summary>
@@ -161,7 +161,7 @@
     <li>템플릿 사진에 색상 선택기를 사용하여 올바른 색상 사용하기</li>
     <li>...그리고 더!</li>
   </ul>
-  이 유저스크립트가 좋다면, 리포지토리에 ⭐을 남겨주세요! 더 많은 정보를 원하면, <a href="https://bluemarble.lol/" target="_blank" rel="noopener noreferrer">블루 마블 웹사이트</a>를 방문하세요. 블루 마블에 기여하고 싶으면, <code>docs/</code>에 있는 <a href="https://github.com/sungsoos/Wplace-BlueMarble-Userscripts-kr/blob/main/docs/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer">CONTRIBUTING.md</a>를 확인해 주세요.
+  이 유저스크립트가 좋다면, 리포지토리에 ⭐을 남겨주세요! 더 많은 정보를 원하면, <a href="https://bluemarble.lol/" target="_blank" rel="noopener noreferrer">블루 마블 웹사이트</a>를 방문하세요. 블루 마블에 기여하고 싶으면, <code>docs/</code>에 있는 <a href="https://github.com/sungsoos/Wplace-BlueMarble-Userscripts-kr/blob/custom-improve/docs/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer">CONTRIBUTING.md</a>를 확인해 주세요.
 
   <img alt="블루 마블 템플릿의 미리보기 이미지" src="./assets/Showcase1.png">
 
@@ -181,14 +181,14 @@
       <ol>
         <li>Chrome용 <a href="https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo" target="_blank" rel="noopener noreferrer">TamperMonkey</a> 확장 프로그램을 설치하세요.
         <br>
-        <img alt="'확장 프로그램 추가' 버튼을 클릭하세요" src="https://github.com/sungsoos/Wplace-BlueMarble-Userscripts-kr/blob/main/docs/assets/ComputerChromeInstall1.png"></li>
+        <img alt="'확장 프로그램 추가' 버튼을 클릭하세요" src="https://github.com/sungsoos/Wplace-BlueMarble-Userscripts-kr/blob/custom-improve/docs/assets/ComputerChromeInstall1.png"></li>
         <li>확장 프로그램을 마우스 오른쪽 버튼으로 클릭하세요.
         <br>
-        <img alt="'확장 프로그램 관리' 메뉴로 들어가세요" src="https://github.com/sungsoos/Wplace-BlueMarble-Userscripts-kr/blob/main/docs/assets/ComputerChromeInstall2.png"></li>
+        <img alt="'확장 프로그램 관리' 메뉴로 들어가세요" src="https://github.com/sungsoos/Wplace-BlueMarble-Userscripts-kr/blob/custom-improve/docs/assets/ComputerChromeInstall2.png"></li>
         <li>'확장 프로그램 관리'를 마우스 왼쪽 버튼으로 클릭하세요.</li>
         <li>'개발자 모드'를 활성화하세요.
         <br>
-        <img alt="'개발자 모드'와 '사용자 스크립트 허용'을 활성화하세요" src="https://github.com/sungsoos/Wplace-BlueMarble-Userscripts-kr/blob/main/docs/assets/ComputerChromeInstall3.png"></li>
+        <img alt="'개발자 모드'와 '사용자 스크립트 허용'을 활성화하세요" src="https://github.com/sungsoos/Wplace-BlueMarble-Userscripts-kr/blob/custom-improve/docs/assets/ComputerChromeInstall3.png"></li>
         <li>'사용자 스크립트 허용'을 활성화하세요.</li>
         <li><strong>원클릭 설치:</strong> 이 링크를 눌러 블루 마블을 바로 설치하세요: <a href="https://raw.githubusercontent.com/sungsoos/Wplace-BlueMarble-Userscripts-kr/custom-improve/dist/BlueMarble.user.js" target="_blank" rel="noopener noreferrer"><strong>블루 마블 설치</strong></a>
         <br>
@@ -203,27 +203,27 @@
       <ol>
         <li>Microsoft Edge용 <a href="https://microsoftedge.microsoft.com/addons/detail/iikmkjmpaadaobahmlepeloendndfphd" target="_blank" rel="noopener noreferrer">TamperMonkey</a> 플러그인을 설치하세요.
         <br>
-        <img alt="'받기' 버튼을 클릭하세요" src="https://github.com/sungsoos/Wplace-BlueMarble-Userscripts-kr/blob/main/docs/assets/ComputerEdgeInstall1.png"></li>
+        <img alt="'받기' 버튼을 클릭하세요" src="https://github.com/sungsoos/Wplace-BlueMarble-Userscripts-kr/blob/custom-improve/docs/assets/ComputerEdgeInstall1.png"></li>
         <li>확장 프로그램을 마우스 오른쪽 버튼으로 클릭하세요.
         <br>
-        <img alt="'확장 프로그램 관리' 메뉴로 들어가세요" src="https://github.com/sungsoos/Wplace-BlueMarble-Userscripts-kr/blob/main/docs/assets/ComputerEdgeInstall2.png"></li>
+        <img alt="'확장 프로그램 관리' 메뉴로 들어가세요" src="https://github.com/sungsoos/Wplace-BlueMarble-Userscripts-kr/blob/custom-improve/docs/assets/ComputerEdgeInstall2.png"></li>
         <li>'확장 프로그램 관리'를 마우스 왼쪽 버튼으로 클릭하세요.</li>
         <li>'개발자 모드'를 활성화하세요.
         <br>
-        <img alt="'개발자 모드'를 활성화하세요" src="https://github.com/sungsoos/Wplace-BlueMarble-Userscripts-kr/blob/main/docs/assets/ComputerEdgeInstall3.png"></li>
+        <img alt="'개발자 모드'를 활성화하세요" src="https://github.com/sungsoos/Wplace-BlueMarble-Userscripts-kr/blob/custom-improve/docs/assets/ComputerEdgeInstall3.png"></li>
         <li><a href="https://raw.githubusercontent.com/sungsoos/Wplace-BlueMarble-Userscripts-kr/custom-improve/dist/BlueMarble.user.js" target="_blank" rel="noopener noreferrer">BlueMarble.user.js</a> 파일을 다운로드하세요.</li>
         <li>TamperMonkey 대시보드를 여세요.
         <br>
-        <img alt="TamperMonkey '대시보드'로 들어가세요" src="https://github.com/sungsoos/Wplace-BlueMarble-Userscripts-kr/blob/main/docs/assets/ComputerEdgeInstall4.png"></li>
+        <img alt="TamperMonkey '대시보드'로 들어가세요" src="https://github.com/sungsoos/Wplace-BlueMarble-Userscripts-kr/blob/custom-improve/docs/assets/ComputerEdgeInstall4.png"></li>
         <li><code>BlueMarble.user.js</code> 파일을 TamperMonkey 대시보드 안으로 끌어다 놓으세요.
         <br>
-        <img alt="유저스크립트를 대시보드 안으로 끌어다 놓으세요" src="https://github.com/sungsoos/Wplace-BlueMarble-Userscripts-kr/blob/main/docs/assets/ComputerChromeInstall5.png"></li>
+        <img alt="유저스크립트를 대시보드 안으로 끌어다 놓으세요" src="https://github.com/sungsoos/Wplace-BlueMarble-Userscripts-kr/blob/custom-improve/docs/assets/ComputerChromeInstall5.png"></li>
         <li>'설치' 버튼을 클릭하여 블루 마블을 설치하세요.
         <br>
-        <img alt="'설치' 버튼을 클릭하세요" src="https://github.com/sungsoos/Wplace-BlueMarble-Userscripts-kr/blob/main/docs/assets/ComputerChromeInstall6.png"></li>
+        <img alt="'설치' 버튼을 클릭하세요" src="https://github.com/sungsoos/Wplace-BlueMarble-Userscripts-kr/blob/custom-improve/docs/assets/ComputerChromeInstall6.png"></li>
         <li>TamperMonkey 대시보드에서 블루 마블을 활성화하세요.
         <br>
-        <img alt="블루 마블을 활성화하세요" src="https://github.com/sungsoos/Wplace-BlueMarble-Userscripts-kr/blob/main/docs/assets/ComputerChromeInstall7.png"></li>
+        <img alt="블루 마블을 활성화하세요" src="https://github.com/sungsoos/Wplace-BlueMarble-Userscripts-kr/blob/custom-improve/docs/assets/ComputerChromeInstall7.png"></li>
         <li><a href="https://wplace.live/" target="_blank" rel="noopener noreferrer">wplace.live</a> 웹페이지를 새로고침하세요.</li>
       </ol>
     </details>
@@ -234,7 +234,7 @@
       <ol>
         <li><a href="https://addons.mozilla.org/en-US/firefox/addon/tampermonkey/" target="_blank" rel="noopener noreferrer">TamperMonkey</a> 플러그인을 설치하세요.
         <br>
-        <img alt="'파이어폭스에 추가' 버튼을 클릭하세요" src="https://github.com/sungsoos/Wplace-BlueMarble-Userscripts-kr/blob/main/docs/assets/ComputerFireFoxInstall1.png"></li>
+        <img alt="'파이어폭스에 추가' 버튼을 클릭하세요" src="https://github.com/sungsoos/Wplace-BlueMarble-Userscripts-kr/blob/custom-improve/docs/assets/ComputerFireFoxInstall1.png"></li>
         <li><strong>원클릭 설치:</strong> 이 링크를 눌러 블루 마블을 설치하세요: <a href="https://raw.githubusercontent.com/sungsoos/Wplace-BlueMarble-Userscripts-kr/custom-improve/dist/BlueMarble.user.js" target="_blank" rel="noopener noreferrer"><strong>블루 마블 설치</strong></a>
         <br>
         TamperMonkey가 유저스크립트를 자동으로 감지하고 설치 여부를 묻습니다.</li>
@@ -265,7 +265,7 @@
     <ol>
       <li>왼쪽 위 코너의 좌표를 찾습니다. <code>타일 X</code>, <code>타일 Y</code>, <code>픽셀 X</code>, and <code>픽셀 Y</code> 를 좌표로 채웁니다. "핀" 아이콘을 눌러 좌표를 자동으로 채울 수 있습니다.
       <br>
-      <img alt="템플릿 좌표 찾기" src="https://github.com/sungsoos/Wplace-BlueMarble-Userscripts-kr/blob/main/docs/assets/TemplateCoordinates1.png"></li>
+      <img alt="템플릿 좌표 찾기" src="https://github.com/sungsoos/Wplace-BlueMarble-Userscripts-kr/blob/custom-improve/docs/assets/TemplateCoordinates1.png"></li>
       <li>PNG 혹은 WEBP 사진을 업로드 합니다.</li>
       <li>"만들기" 버튼을 누릅니다.</li>
       <li>템플릿이 보이지 않다면, "활성화" 버튼을 눌러보세요.</li>
@@ -293,7 +293,7 @@
       <p>
         wplace.live의 좌표 체계는 매우 독특합니다. 모든 픽셀이 하나의 절대적인 전체 좌표(x, y)를 갖는 대신, 좌표 숫자가 타일을 기준으로 상대적으로 지정됩니다. 따라서 어떤 작업을 수행하려면 타일 번호와 픽셀 좌표 번호를 둘 다 알아야 합니다. 블루 마블에서는 픽셀을 클릭하면 해당 타일 좌표와 픽셀 좌표가 함께 표시됩니다. 템플릿의 위치를 맞출 때는 바로 이 좌표들을 사용해야 합니다.
         <br>
-        <img alt="좌표를 찾는 방법" src="https://github.com/sungsoos/Wplace-BlueMarble-Userscripts-kr/blob/main/docs/assets/TemplateCoordinatesDisplay.png">
+        <img alt="좌표를 찾는 방법" src="https://github.com/sungsoos/Wplace-BlueMarble-Userscripts-kr/blob/custom-improve/docs/assets/TemplateCoordinatesDisplay.png">
       </p>
       <h5>템플릿 좌표</h5>
       <p>
