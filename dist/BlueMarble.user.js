@@ -4019,7 +4019,7 @@ Getting Y ${pixelY}-${pixelY + drawSizeY}`);
       userDropletsElement.textContent = new Intl.NumberFormat().format(dataJSON["droplets"]);
     }
     const nextPixelElement = document.getElementById("bm-user-nextpixel");
-    if (nextPixelElement && nextPixelPluralElement) {
+    if (nextPixelElement) {
       nextPixelElement.textContent = new Intl.NumberFormat().format(nextLevelPixels);
     }
     const nextLevelElement = document.getElementById("bm-user-nextlevel");
