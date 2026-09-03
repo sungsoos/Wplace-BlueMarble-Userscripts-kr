@@ -673,7 +673,7 @@ export default class Overlay {
 
     // What to do when one of the two elements are not found
     if (!moveMe || !iMoveThings) {
-      this.handleDisplayError(`Can not drag! ${!moveMe ? 'moveMe' : ''} ${!moveMe && !iMoveThings ? 'and ' : ''}${!iMoveThings ? 'iMoveThings ' : ''}was not found!`);
+      this.handleDisplayError(`드래그할 수 없습니다! ${!moveMe ? 'moveMe' : ''} ${!moveMe && !iMoveThings ? '와 ' : ''}${!iMoveThings ? 'iMoveThings ' : ''}를 찾을 수 없습니다!`);
       return; // Kills itself
     }
 

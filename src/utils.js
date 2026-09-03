@@ -367,18 +367,18 @@ export function areOverlayCoordsFilledAndValid() {
  * The function parameter is (rgb, enabled count, painted enabled count)
  */
 export const sortByOptions = {
-  "total": ([rgb, paintedCount, totalCount]) => totalCount,
-  "painted": ([rgb, paintedCount, totalCount]) => paintedCount,
-  "remaining": ([rgb, paintedCount, totalCount]) => totalCount - paintedCount,
-  "painted%": ([rgb, paintedCount, totalCount]) => paintedCount / (totalCount === 0 ? 1 : totalCount),
-  "color#": ([rgb, paintedCount, totalCount]) => {
+  "총합": ([rgb, paintedCount, totalCount]) => totalCount,
+  "칠해짐": ([rgb, paintedCount, totalCount]) => paintedCount,
+  "남음": ([rgb, paintedCount, totalCount]) => totalCount - paintedCount,
+  "칠해짐 퍼센트": ([rgb, paintedCount, totalCount]) => paintedCount / (totalCount === 0 ? 1 : totalCount),
+  "색 #": ([rgb, paintedCount, totalCount]) => {
     if (rgb === "other") return 361; // Force After All Colors
     if (rgb === "#deface") return -1; // Force Before All Colors
     const tMeta = rgbToMeta.get(rgb);
     if (tMeta && typeof tMeta.id === 'number') return tMeta.id;
     return 361; // Force After All Colors
   },
-  "hue": ([rgb, paintedCount, totalCount]) => {
+  "색상": ([rgb, paintedCount, totalCount]) => {
     if (rgb === "other") return 361; // Force After All Colors
     if (rgb === "#deface") return -1; // Force Before All Colors
     const [r, g, b] = rgb.split(',').map(Number);
@@ -394,7 +394,7 @@ export const sortByOptions = {
       return (((r - g) / delta) + 4) * 60;
     }
   },
-  "luminance": ([rgb, paintedCount, totalCount]) => {
+  "명도": ([rgb, paintedCount, totalCount]) => {
     if (rgb === "other") return 2; // Force After All Colors
     if (rgb === "#deface") return 0; // Force Before All Colors
     const [r, g, b] = rgb.split(',').map(Number);

@@ -21,7 +21,7 @@ export default class Template {
    * @since 0.65.2
    */
   constructor({
-    displayName = 'My template',
+    displayName = '내 템플릿',
     sortID = 0,
     authorID = '',
     url = '',

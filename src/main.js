@@ -448,17 +448,17 @@ function observeBlack() {
     if (!move) {
       move = document.createElement('button');
       move.id = 'bm-button-move';
-      move.textContent = 'Move ↑';
+      move.textContent = '움직이기 ↑';
       move.className = 'btn btn-soft';
       move.onclick = function() {
         const roundedBox = this.parentNode.parentNode.parentNode.parentNode; // Obtains the rounded box
-        const shouldMoveUp = (this.textContent == 'Move ↑');
+        const shouldMoveUp = (this.textContent == '움직이기 ↑');
         roundedBox.parentNode.className = roundedBox.parentNode.className.replace(shouldMoveUp ? 'bottom' : 'top', shouldMoveUp ? 'top' : 'bottom'); // Moves the rounded box to the top
         roundedBox.style.borderTopLeftRadius = shouldMoveUp ? '0px' : 'var(--radius-box)';
         roundedBox.style.borderTopRightRadius = shouldMoveUp ? '0px' : 'var(--radius-box)';
         roundedBox.style.borderBottomLeftRadius = shouldMoveUp ? 'var(--radius-box)' : '0px';
         roundedBox.style.borderBottomRightRadius = shouldMoveUp ? 'var(--radius-box)' : '0px';
-        this.textContent = shouldMoveUp ? 'Move ↓' : 'Move ↑';
+        this.textContent = shouldMoveUp ? '움직이기 ↓' : '움직이기 ↑';
       }
 
       // Attempts to find the "Paint Pixel" element for anchoring
@@ -632,13 +632,13 @@ function observeBlack() {
 
         paint = document.createElement('button');
         paint.id = 'bm-button-paint';
-        paint.textContent = 'Paint';
+        paint.textContent = '칠하기';
         paint.className = 'btn btn-soft';
         paint.onclick = () => paint_onclick(true);
 
         const paint2 = document.createElement('button');
         paint2.id = 'bm-button-paint';
-        paint2.textContent = 'Fill Screen';
+        paint2.textContent = '화면 채우기';
         paint2.className = 'btn btn-soft';
         paint2.onclick = () => paint_onclick(false);
         // Attempts to find the "Paint Pixel" element for anchoring
@@ -711,7 +711,7 @@ async function buildOverlayMain() {
   overlayMain.addDiv({'id': 'bm-overlay', 'style': 'top: 10px; right: 75px;'})
     .addDiv({'id': 'bm-contain-header'})
       .addDiv({'id': 'bm-bar-drag'}).buildElement()
-      .addImg({'alt': 'Blue Marble Icon - Click to minimize/maximize', 'src': 'https://raw.githubusercontent.com/SwingTheVine/Wplace-BlueMarble/main/dist/assets/Favicon.png', 'style': 'cursor: pointer;'}, 
+      .addImg({'alt': '블루 마블 아이콘 - 눌러서 최소화/최대화', 'src': 'https://raw.githubusercontent.com/SwingTheVine/Wplace-BlueMarble/main/dist/assets/Favicon.png', 'style': 'cursor: pointer;'}, 
         (instance, img) => {
           /** Click event handler for overlay minimize/maximize functionality.
            * 
@@ -924,8 +924,8 @@ async function buildOverlayMain() {
             
             // Update alt text to reflect current state for screen readers and tooltips
             img.alt = isMinimized ? 
-              'Blue Marble Icon - Minimized (Click to maximize)' : 
-              'Blue Marble Icon - Maximized (Click to minimize)';
+              '블루 마블 아이콘 - 최소화됨 (클릭하여 최대화)' : 
+              '블루 마블 아이콘 - 최대화됨 (클릭하여 최소화)';
             
             // No status message needed - state change is visually obvious to users
           });
@@ -939,7 +939,7 @@ async function buildOverlayMain() {
     .addHr().buildElement()
 
     .addDiv({'id': 'bm-contain-userinfo'})
-      .addP({'textContent': 'Username: '})
+      .addP({'textContent': '이름: '})
         .addB({'id': 'bm-user-name'}).buildElement()
       .buildElement()
       .addP({'id': 'bm-user-charges'}, (_, element) => {
@@ -957,23 +957,22 @@ async function buildOverlayMain() {
       .addP({'id': 'bm-user-suspend', 'style': 'display: none;'}, (_, element) => {
         element.setAttribute('aria-live', 'polite');
       })
-        .addText('Suspension Expires in ')
+        .addText('정지가 끝나는 시간: ')
         .addSpan({'className': 'bm-suspend-countdown', 'textContent': '--:--'}, (_, element) => {
           element.dataset.role = 'suspend-countdown';
         }).buildElement()
       .buildElement()
-      .addP({'id': 'bm-user-suspend-reason', 'textContent': 'Reason: ', 'style': 'display: none;'})
+      .addP({'id': 'bm-user-suspend-reason', 'textContent': '이유: ', 'style': 'display: none;'})
         .addB({'id': 'bm-suspend-reason', 'textContent': 'Unknown'}).buildElement()
       .buildElement()
-      .addP({'textContent': 'Droplets: '})
+      .addP({'textContent': '물방울: '})
         .addB({'id': 'bm-user-droplets'}).buildElement()
       .buildElement()
       .addP()
-        .addB({'id': 'bm-user-nextpixel', 'textContent': '--'}).buildElement()
-        .addText(' more pixel')
-        .addSpan({'id': 'bm-user-nextpixel-plural', 'textContent': 's'}).buildElement()
-        .addText(' to Lv. ')
         .addB({'id': 'bm-user-nextlevel', 'textContent': '--'}).buildElement()
+        .addText(' 레벨까지 ')
+        .addB({'id': 'bm-user-nextpixel', 'textContent': '--'}).buildElement()
+        .addText(' 픽셀 남음')
       .buildElement()
     .buildElement()
 
@@ -993,7 +992,7 @@ async function buildOverlayMain() {
               const coords = instance.apiManager?.coordsTilePixel; // Retrieves the coords from the API manager
               const emptyIfUndefined = value => value ?? "";
               if (coords?.[0] === undefined) {
-                instance.handleDisplayError('Coordinates are malformed! Did you try clicking on the canvas first?');
+                instance.handleDisplayError('좌표가 잘못되었습니다! 캔버스를 클릭해 보셨나요?');
                 return;
               }
               instance.updateInnerHTML('bm-input-tx', emptyIfUndefined(coords?.[0]));
@@ -1005,7 +1004,7 @@ async function buildOverlayMain() {
             }
           }
         ).buildElement()
-        .addInput({'type': 'number', 'id': 'bm-input-tx', 'placeholder': 'Tl X', 'min': 0, 'max': 2047, 'step': 1, 'required': true, 'value': (savedCoords.tx ?? '')}, (instance, input) => {
+        .addInput({'type': 'number', 'id': 'bm-input-tx', 'placeholder': '타일 X', 'min': 0, 'max': 2047, 'step': 1, 'required': true, 'value': (savedCoords.tx ?? '')}, (instance, input) => {
           //if a paste happens on tx, split and format it into other coordinates if possible
           input.addEventListener("paste", (event) => {
             const clipboardText = (event.clipboardData || window.clipboardData).getData("text");
@@ -1042,22 +1041,22 @@ async function buildOverlayMain() {
           input.addEventListener('input', handler);
           input.addEventListener('change', handler);
         }).buildElement()
-        .addInput({'type': 'number', 'id': 'bm-input-ty', 'placeholder': 'Tl Y', 'min': 0, 'max': 2047, 'step': 1, 'required': true, 'value': (savedCoords.ty ?? '')}, (instance, input) => {
+        .addInput({'type': 'number', 'id': 'bm-input-ty', 'placeholder': '타일 Y', 'min': 0, 'max': 2047, 'step': 1, 'required': true, 'value': (savedCoords.ty ?? '')}, (instance, input) => {
           const handler = () => (apiManager.updateDownloadButton(), persistCoords());
           input.addEventListener('input', handler);
           input.addEventListener('change', handler);
         }).buildElement()
-        .addInput({'type': 'number', 'id': 'bm-input-px', 'placeholder': 'Px X', 'min': 0, 'max': 2047, 'step': 1, 'required': true, 'value': (savedCoords.px ?? '')}, (instance, input) => {
+        .addInput({'type': 'number', 'id': 'bm-input-px', 'placeholder': '픽셀 X', 'min': 0, 'max': 2047, 'step': 1, 'required': true, 'value': (savedCoords.px ?? '')}, (instance, input) => {
           const handler = () => (apiManager.updateDownloadButton(), persistCoords());
           input.addEventListener('input', handler);
           input.addEventListener('change', handler);
         }).buildElement()
-        .addInput({'type': 'number', 'id': 'bm-input-py', 'placeholder': 'Px Y', 'min': 0, 'max': 2047, 'step': 1, 'required': true, 'value': (savedCoords.py ?? '')}, (instance, input) => {
+        .addInput({'type': 'number', 'id': 'bm-input-py', 'placeholder': '픽셀 Y', 'min': 0, 'max': 2047, 'step': 1, 'required': true, 'value': (savedCoords.py ?? '')}, (instance, input) => {
           const handler = () => (apiManager.updateDownloadButton(), persistCoords());
           input.addEventListener('input', handler);
           input.addEventListener('change', handler);
         }).buildElement()
-        .addButton({'id': 'bm-button-teleport', 'className': 'bm-help', 'style': 'margin-top: 0;', 'innerHTML': '✈️', 'title': 'Teleport'},
+        .addButton({'id': 'bm-button-teleport', 'className': 'bm-help', 'style': 'margin-top: 0;', 'innerHTML': '✈️', 'title': '이동'},
           (instance, button) => {
             button.onclick = () => {
               teleportCoords();
@@ -1065,18 +1064,18 @@ async function buildOverlayMain() {
           }
         ).buildElement()
       .buildElement()
-      .addDetails({'id': 'bm-checkbox-container', 'textContent': 'User Settings', 'style': 'max-width: 100%; white-space: nowrap; border: 1px solid rgba(255,255,255,0.1); padding: 4px; border-radius: 4px; margin-top: 4px;'})
+      .addDetails({'id': 'bm-checkbox-container', 'textContent': '사용자 설정', 'style': 'max-width: 100%; white-space: nowrap; border: 1px solid rgba(255,255,255,0.1); padding: 4px; border-radius: 4px; margin-top: 4px;'})
         // Color filter UI
         // .addDiv({'style': 'display: flex; flex-direction: column; gap: 4px;'})
         .addDiv({'id': 'bm-user_setting-list', 'style': 'max-height: 125px; overflow-x: hidden; overflow-y: auto; touch-action: pan-x pan-y; display: flex; flex-direction: column; gap: 4px; margin-top: 3px;'})
-          .addCheckbox({'id': 'bm-only-current-color-enabled', 'textContent': 'Show Current Color Only', 'checked': templateManager.isOnlyCurrentColorShown()}, (instance, label, checkbox) => {
+          .addCheckbox({'id': 'bm-only-current-color-enabled', 'textContent': '현재 색상만 표시', 'checked': templateManager.isOnlyCurrentColorShown()}, (instance, label, checkbox) => {
             checkbox.addEventListener('change', () => {
               templateManager.setOnlyCurrentColorShown(checkbox.checked);
               if (checkbox.checked) {
-                instance.handleDisplayStatus("Only the currently selected color will be shown.");
+                instance.handleDisplayStatus("오직 선택된 색상만 표시됩니다.");
                 buildColorFilterList();
               } else {
-                instance.handleDisplayStatus("Color filter is restored.");
+                instance.handleDisplayStatus("색상 필터가 복원되었습니다.");
                 buildColorFilterList();
               };
               templateManager.createOverlayOnMap();
@@ -1087,27 +1086,27 @@ async function buildOverlayMain() {
               buildColorFilterList();
             });
           }).buildElement()
-          .addCheckbox({'id': 'bm-checkbox-colors-unlocked', 'textContent': 'Hide Locked Colors', 'checked': templateManager.areLockedColorsHidden()}, (instance, label, checkbox) => {
+          .addCheckbox({'id': 'bm-checkbox-colors-unlocked', 'textContent': '잠긴 색상 숨기기', 'checked': templateManager.areLockedColorsHidden()}, (instance, label, checkbox) => {
             checkbox.addEventListener('change', () => {
               templateManager.setHideLockedColors(checkbox.checked);
               buildColorFilterList();
               templateManager.createOverlayOnMap();
               if (checkbox.checked) {
-                instance.handleDisplayStatus("Hidden all locked colors.");
+                instance.handleDisplayStatus("모든 잠긴 색상을 숨겼습니다.");
               } else {
-                instance.handleDisplayStatus("Restored all colors.");
+                instance.handleDisplayStatus("모든 색상을 표시합니다.");
               }
             });
           }).buildElement()
-          .addCheckbox({'id': 'bm-checkbox-colors-completed', 'textContent': 'Hide Completed Colors', 'checked': templateManager.areCompletedColorsHidden()}, (instance, label, checkbox) => {
+          .addCheckbox({'id': 'bm-checkbox-colors-completed', 'textContent': '완료된 색상 숨기기', 'checked': templateManager.areCompletedColorsHidden()}, (instance, label, checkbox) => {
             checkbox.addEventListener('change', () => {
               templateManager.setHideCompletedColors(checkbox.checked);
               buildColorFilterList();
               templateManager.createOverlayOnMap();
               if (checkbox.checked) {
-                instance.handleDisplayStatus("Hidden all completed colors.");
+                instance.handleDisplayStatus("모든 완료된 색상을 숨겼습니다.");
               } else {
-                instance.handleDisplayStatus("Restored all colors.");
+                instance.handleDisplayStatus("모든 색상을 표시합니다.");
               }
               if (templateManager.isErrorMapShown() && templateManager.isErrorMapOnlyEnabledColorsShown()) {
                 // This setting may change the enabled color list
@@ -1115,33 +1114,33 @@ async function buildOverlayMain() {
               }
             });
           }).buildElement()
-          .addCheckbox({'id': 'bm-status-hidden', 'textContent': 'Disable Template Overlays', 'checked': templateManager.areTemplatesHidden()}, (instance, label, checkbox) => {
+          .addCheckbox({'id': 'bm-status-hidden', 'textContent': '템플릿 오버레이 비활성화', 'checked': templateManager.areTemplatesHidden()}, (instance, label, checkbox) => {
             checkbox.addEventListener('change', () => {
               templateManager.setTemplatesHidden(checkbox.checked);
               if (checkbox.checked) {
-                instance.handleDisplayStatus("Template Overlays Disabled.");
+                instance.handleDisplayStatus("템플릿 오버레이가 비활성화되었습니다.");
                 removeLayer("overlay");
               } else {
-                instance.handleDisplayStatus("Template Overlays Enabled.");
+                instance.handleDisplayStatus("템플릿 오버레이가 활성화되었습니다.");
                 templateManager.createOverlayOnMap();
               }
             });
           }).buildElement()
-          .addCheckbox({'id': 'bm-show-error-map', 'textContent': 'Show Error Map', 'checked': templateManager.isErrorMapShown()}, (instance, label, checkbox) => {
+          .addCheckbox({'id': 'bm-show-error-map', 'textContent': '오차 맵 표시', 'checked': templateManager.isErrorMapShown()}, (instance, label, checkbox) => {
             checkbox.addEventListener('change', () => {
               templateManager.setErrorMapShown(checkbox.checked);
               document.getElementById('bm-show-only-enabled-colors-on-error-map').parentElement.style.display = checkbox.checked ? '' : 'none'; // the label containing not the checkbox
               if (checkbox.checked) {
-                instance.handleDisplayStatus("Error Map is now Displayed.");
+                instance.handleDisplayStatus("오차 맵이 표시됩니다.");
                 apiManager.tileCache = {}; // reset to force update
                 forceRefreshTiles();
               } else {
-                instance.handleDisplayStatus("Error Map is now Hidden.");
+                instance.handleDisplayStatus("오차 맵이 숨겨집니다.");
                 removeLayer("error");
               };
             });
           }).buildElement()
-          .addCheckbox({'id': 'bm-show-only-enabled-colors-on-error-map', 'textContent': 'Only Enabled Colors on Error Map', 'checked': templateManager.isErrorMapOnlyEnabledColorsShown()}, (instance, label, checkbox) => {
+          .addCheckbox({'id': 'bm-show-only-enabled-colors-on-error-map', 'textContent': '오차 맵에서 활성화된 색상만 표시', 'checked': templateManager.isErrorMapOnlyEnabledColorsShown()}, (instance, label, checkbox) => {
             label.style.paddingLeft = '1em';
             if (templateManager.isErrorMapShown()) {
               label.style.display = '';
@@ -1151,15 +1150,15 @@ async function buildOverlayMain() {
             checkbox.addEventListener('change', () => {
               templateManager.setErrorMapOnlyEnabledColorsShown(checkbox.checked);
               if (checkbox.checked) {
-                instance.handleDisplayStatus("Error Map now only shows enabled colors.");
+                instance.handleDisplayStatus("오차 맵이 활성화된 색상만 표시합니다.");
               } else {
-                instance.handleDisplayStatus("Error Map now shows every pixel involved in the template.");
+                instance.handleDisplayStatus("오차 맵이 템플릿에 참여하는 모든 픽셀을 표시합니다.");
               };
               apiManager.tileCache = {}; // reset to force update
               forceRefreshTiles();
             });
           }).buildElement()
-          .addCheckbox({'id': 'bm-theme-override-enabled', 'textContent': 'Theme Override: ', 'checked': templateManager.isThemeOverridden()}, (instance, label, checkbox) => {
+          .addCheckbox({'id': 'bm-theme-override-enabled', 'textContent': '테마 덮어쓰기: ', 'checked': templateManager.isThemeOverridden()}, (instance, label, checkbox) => {
             // this feature is currently broken by wplace
             // label.style.display = "none";
             checkbox.addEventListener('change', async () => {
@@ -1182,30 +1181,30 @@ async function buildOverlayMain() {
               });
               select.addEventListener('change', async () => {
                 await templateManager.setCurrentTheme(select.value);
-                instance.handleDisplayStatus(`Changed the theme to "${themeList[select.value][0]}".`);
+                instance.handleDisplayStatus(`테마를 "${themeList[select.value][0]}"로 변경하였습니다.`);
                 forceUpdateTheme();
               })
             }).buildElement()
           .buildElement()
-          .addCheckbox({'id': 'bm-event-enabled', 'textContent': 'Enable Event', 'checked': templateManager.isEventEnabled()}, (instance, label, checkbox) => {
+          .addCheckbox({'id': 'bm-event-enabled', 'textContent': '이벤트 활성화', 'checked': templateManager.isEventEnabled()}, (instance, label, checkbox) => {
             checkbox.addEventListener('change', () => {
               templateManager.setEventEnabled(checkbox.checked);
               if (checkbox.checked) {
-                instance.handleDisplayStatus("Event Mode Enabled.");
+                instance.handleDisplayStatus("이벤트 모드가 활성화되었습니다.");
                 document.getElementById('bm-contain-eventitem').style.display = '';
                 document.getElementById('bm-event-hide-claimed').parentElement.style.display = ''; // the label containing not the checkbox
                 document.getElementById('bm-event-hide-unavailable').parentElement.style.display = ''; // the label containing not the checkbox
                 apiManager.refreshEventData();
                 buildEventList();
               } else {
-                instance.handleDisplayStatus("Event Mode Disabled.");
+                instance.handleDisplayStatus("이벤트 모드가 비활성화되었습니다.");
                 document.getElementById('bm-contain-eventitem').style.display = 'none';
                 document.getElementById('bm-event-hide-claimed').parentElement.style.display = 'none'; // the label containing not the checkbox
                 document.getElementById('bm-event-hide-unavailable').parentElement.style.display = 'none'; // the label containing not the checkbox
               }
             });
           }).buildElement()
-          .addCheckbox({'id': 'bm-event-hide-claimed', 'textContent': 'Hide Claimed Event Items', 'checked': !templateManager.isEventClaimedShown()}, (instance, label, checkbox) => {
+          .addCheckbox({'id': 'bm-event-hide-claimed', 'textContent': '획득한 이벤트 아이템 숨기기', 'checked': !templateManager.isEventClaimedShown()}, (instance, label, checkbox) => {
             label.style.paddingLeft = '1em';
             if (templateManager.isEventEnabled()) {
               label.style.display = '';
@@ -1215,14 +1214,14 @@ async function buildOverlayMain() {
             checkbox.addEventListener('change', () => {
               templateManager.setEventClaimedShown(!checkbox.checked);
               if (checkbox.checked) {
-                instance.handleDisplayStatus("Hidden All Event Claimed Items.");
+                instance.handleDisplayStatus("획득한 이벤트 아이템이 숨겼습니다.");
               } else {
-                instance.handleDisplayStatus("Restored All Event Claimed Items.");
+                instance.handleDisplayStatus("획득한 이벤트 아이템이 복원되었습니다.");
               }
               buildEventList();
             });
           }).buildElement()
-          .addCheckbox({'id': 'bm-event-hide-unavailable', 'textContent': 'Hide Unavailable Event Items', 'checked': !templateManager.isEventUnavailableShown()}, (instance, label, checkbox) => {
+          .addCheckbox({'id': 'bm-event-hide-unavailable', 'textContent': '사용할 수 없는 이벤트 아이템 숨기기', 'checked': !templateManager.isEventUnavailableShown()}, (instance, label, checkbox) => {
             label.style.paddingLeft = '1em';
             if (templateManager.isEventEnabled()) {
               label.style.display = '';
@@ -1232,20 +1231,20 @@ async function buildOverlayMain() {
             checkbox.addEventListener('change', () => {
               templateManager.setEventUnavailableShown(!checkbox.checked);
               if (checkbox.checked) {
-                instance.handleDisplayStatus("Hidden All Unavailable Event Items.");
+                instance.handleDisplayStatus("사용할 수 없는 이벤트 아이템이 숨겨졌습니다.");
               } else {
-                instance.handleDisplayStatus("Restored All Unavailable Event Items.");
+                instance.handleDisplayStatus("사용할 수 없는 이벤트 아이템이 복원되었습니다.");
               }
               buildEventList();
             });
           }).buildElement()
-          .addLabel({'id': 'bm-template-mode', 'textContent': 'Template Mode: '})
+          .addLabel({'id': 'bm-template-mode', 'textContent': '템플릿 모드: '})
             .addSelect({'id': 'bm-template-setting'}, (instance, select) => {
               const currentMode = templateManager.getTemplateMode();
               const templateModeList = {
-                0: "Crosshair (Default)",
-                1: "Dot (Original)",
-                3: "3x3 Alternate",
+                0: "십자 (기본)",
+                1: "점 (원본)",
+                3: "3x3 사각형",
                 // maybe can support something like per-color pattern mode
               };
               Object.entries(templateModeList).forEach(([setValueStr, displayText]) => {
@@ -1257,41 +1256,41 @@ async function buildOverlayMain() {
               });
               select.addEventListener('change', async () => {
                 await templateManager.setTemplateMode(+select.value);
-                instance.handleDisplayStatus(`Changed the Template Mode to "${templateModeList[select.value]}".`);
+                instance.handleDisplayStatus(`템플릿 모드가 "${templateModeList[select.value]}"(으)로 변경되었습니다.`);
                 templateManager.createOverlayOnMap();
               })
             }).buildElement()
           .buildElement()
-          .addCheckbox({'id': 'bm-show-zoom-buttons', 'textContent': 'Show Integer Zoom Buttons', 'checked': templateManager.areIntegerZoomButtonsShown()}, (instance, label, checkbox) => {
+          .addCheckbox({'id': 'bm-show-zoom-buttons', 'textContent': '확대 배율 버튼 표시', 'checked': templateManager.areIntegerZoomButtonsShown()}, (instance, label, checkbox) => {
             checkbox.addEventListener('change', () => {
               templateManager.setIntegerZoomButtonsShown(checkbox.checked);
               const concernedElements = Array.from(document.getElementsByClassName('bm-zoom-btn'));
               if (checkbox.checked) {
-                instance.handleDisplayStatus("Integer Zoom Buttons are now Displayed.");
+                instance.handleDisplayStatus("확대 배율 버튼이 표시됩니다.");
                 concernedElements.forEach(button => button.style.display = '');
               } else {
-                instance.handleDisplayStatus("Integer Zoom Buttons are now Hidden.");
+                instance.handleDisplayStatus("확대 배율 버튼이 숨겨집니다.");
                 concernedElements.forEach(button => button.style.display = 'none');
               };
             });
           }).buildElement()
-          .addCheckbox({'id': 'bm-enable-keybinds', 'textContent': 'Enable WASD Keybinds', 'checked': templateManager.areKeybindsEnabled()}, (instance, label, checkbox) => {
+          .addCheckbox({'id': 'bm-enable-keybinds', 'textContent': 'WASD 키바인드 사용', 'checked': templateManager.areKeybindsEnabled()}, (instance, label, checkbox) => {
             checkbox.addEventListener('change', () => {
               templateManager.setKeybindsEnabled(checkbox.checked);
               if (checkbox.checked) {
-                instance.handleDisplayStatus("WASD Keybinds are now Enabled.");
+                instance.handleDisplayStatus("WASD 키바인드가 켜졌습니다.");
               } else {
-                instance.handleDisplayStatus("WASD Keybinds are now Disabled.");
+                instance.handleDisplayStatus("WASD 키바인드가 비활성화 되었습니다.");
               };
             });
           }).buildElement()
-          .addCheckbox({'id': 'bm-enable-line-template', 'textContent':  'Shape Templates (Experimental)', 'checked': templateManager.isLineTemplateButtonShown()}, (instance, label, checkbox) => {
+          .addCheckbox({'id': 'bm-enable-line-template', 'textContent':  '모양 템플릿 (실험적)', 'checked': templateManager.isLineTemplateButtonShown()}, (instance, label, checkbox) => {
             checkbox.addEventListener('change', () => {
               templateManager.setLineTemplateButtonEnabled(checkbox.checked);
               if (checkbox.checked) {
                 apiManager.updateAddLineTemplateButton();
                 apiManager.updateAddCircleTemplateButton();
-                instance.handleDisplayStatus("The Line and Circle Template Buttons are now Shown in Pixel Info.");
+                instance.handleDisplayStatus("라인 및 원 템플릿 버튼이 이제 픽셀 정보에 표시됩니다.");
               } else {
                 const btnLineTemplate = document.getElementById('bm-create-line-template');
                 if (btnLineTemplate) {
@@ -1301,41 +1300,41 @@ async function buildOverlayMain() {
                 if (btnCircleTemplate) {
                   btnCircleTemplate.remove();
                 }
-                instance.handleDisplayStatus("The Line and Circle Template Buttons are now Hidden from Pixel Info.");
+                instance.handleDisplayStatus("라인 및 원 템플릿 버튼이 픽셀 정보에서 숨겨집니다.");
               };
             });
           }).buildElement()
-          .addCheckbox({'id': 'bm-progress-bar-enabled', 'textContent': 'Show Progress Bar', 'checked': templateManager.isProgressBarEnabled()}, (instance, label, checkbox) => {
+          .addCheckbox({'id': 'bm-progress-bar-enabled', 'textContent': '진행률 표시', 'checked': templateManager.isProgressBarEnabled()}, (instance, label, checkbox) => {
             checkbox.addEventListener('change', () => {
               templateManager.setProgressBarEnabled(checkbox.checked);
               buildColorFilterList();
               if (checkbox.checked) {
-                instance.handleDisplayStatus("Progress Bar Enabled.");
+                instance.handleDisplayStatus("진행률이 켜졌습니다.");
               } else {
-                instance.handleDisplayStatus("Progress Bar Disabled.");
+                instance.handleDisplayStatus("진행률이 꺼졌습니다.");
               }
             });
           }).buildElement()
-          .addCheckbox({'id': 'bm-status-hidden', 'textContent': 'Hide Status Display', 'checked': templateManager.isStatusHidden()}, (instance, label, checkbox) => {
+          .addCheckbox({'id': 'bm-status-hidden', 'textContent': '상태 표시 숨기기', 'checked': templateManager.isStatusHidden()}, (instance, label, checkbox) => {
             checkbox.addEventListener('change', () => {
               templateManager.setStatusHidden(checkbox.checked);
               if (checkbox.checked) {
-                instance.handleDisplayStatus("Status Display Hidden.");
+                instance.handleDisplayStatus("상태 표시가 숨겨졌습니다.");
                 document.getElementById(overlayMain.outputStatusId).style.display = 'none';
               } else {
-                instance.handleDisplayStatus("Status Display Restored.");
+                instance.handleDisplayStatus("상태 표시가 복원되었습니다.");
                 document.getElementById(overlayMain.outputStatusId).style.display = '';
               }
             });
           }).buildElement()
-          .addCheckbox({'id': 'bm-memory-saving-enabled', 'textContent': 'Memory-Saving Mode (Experimental)', 'checked': templateManager.isMemorySavingModeOn()}, (instance, label, checkbox) => {
+          .addCheckbox({'id': 'bm-memory-saving-enabled', 'textContent': '메모리 절약 모드 (실험적)', 'checked': templateManager.isMemorySavingModeOn()}, (instance, label, checkbox) => {
             checkbox.addEventListener('change', () => {
               templateManager.setMemorySavingMode(checkbox.checked);
               buildColorFilterList();
               if (checkbox.checked) {
-                instance.handleDisplayStatus("Memory Saving Mode Enabled. The Effect will be Fully Active After a Page Refresh.");
+                instance.handleDisplayStatus("메모리 절약 모드가 켜졌습니다. 페이지를 새로 고침하면 효과가 완전히 활성화됩니다.");
               } else {
-                instance.handleDisplayStatus("Memory Saving Mode Disabled. The Effect will be Fully Active After a Page Refresh.");
+                instance.handleDisplayStatus("메모리 절약 모드가 꺼졌습니다. 페이지를 새로 고침하면 효과가 완전히 활성화됩니다.");
               }
             });
           }).buildElement()
@@ -1345,11 +1344,11 @@ async function buildOverlayMain() {
         details.open = true;
       })
         // Color sorting
-        .addP({'textContent': 'Sort Colors by ', 'style': 'font-size: small; margin-top: 3px; margin-left: 5px;'})
+        .addP({'textContent': '색상 정렬 기준 ', 'style': 'font-size: small; margin-top: 3px; margin-left: 5px;'})
           // Sorting UI
           .addSelect({'id': 'bm-color-sort'}, (instance, select) => {
             const order = [
-              "Asc", "Desc"
+              "오름차순", "내림차순"
             ]
             const currentSortBy = templateManager.getSortBy();
             Object.keys(sortByOptions).forEach(o => {
@@ -1365,13 +1364,13 @@ async function buildOverlayMain() {
               templateManager.setSortBy(select.value);
               buildColorFilterList();
               const parts = select.value.split('-');
-              instance.handleDisplayStatus(`Changed the sort criteria to "${parts[0][0].toUpperCase() + parts[0].slice(1).toLowerCase()}" in ${parts[1]}ending order.`);
+              instance.handleDisplayStatus(`색상 정렬 기준을 "${parts[0][0].toUpperCase() + parts[0].slice(1).toLowerCase()}" ${parts[1]}으로 바꿨습니다.`);
             })
           }).buildElement()
         .buildElement()
         // Color buttons
         .addDiv({'id': 'bm-button-colors-container', 'style': 'display: flex; gap: 6px; margin-top: 3px; margin-bottom: 3px;'})
-          .addButton({'id': 'bm-button-colors-enable-all', 'textContent': 'Enable All'}, (instance, button) => {
+          .addButton({'id': 'bm-button-colors-enable-all', 'textContent': '모두 활성화'}, (instance, button) => {
             button.onclick = () => {
               templateManager.templatesArray.forEach(t => {
                 if (!t?.colorPalette) { return; }
@@ -1380,13 +1379,13 @@ async function buildOverlayMain() {
               syncToggleList();
               templateManager.createOverlayOnMap();
               buildColorFilterList();
-              instance.handleDisplayStatus('Enabled all colors');
+              instance.handleDisplayStatus('모든 색상이 활성화되었습니다.');
               if (templateManager.isErrorMapShown() && templateManager.isErrorMapOnlyEnabledColorsShown()) {
                 forceRefreshTiles();
               };
             };
           }).buildElement()
-          .addButton({'id': 'bm-button-colors-disable-all', 'textContent': 'Disable All'}, (instance, button) => {
+          .addButton({'id': 'bm-button-colors-disable-all', 'textContent': '모두 비활성화'}, (instance, button) => {
             button.onclick = () => {
               templateManager.templatesArray.forEach(t => {
                 if (!t?.colorPalette) { return; }
@@ -1395,7 +1394,7 @@ async function buildOverlayMain() {
               syncToggleList();
               removeLayer("overlay");
               buildColorFilterList();
-              instance.handleDisplayStatus('Disabled all colors');
+              instance.handleDisplayStatus('모든 색상이 비활성화되었습니다.');
               if (templateManager.isErrorMapShown() && templateManager.isErrorMapOnlyEnabledColorsShown()) {
                 forceRefreshTiles();
               };
@@ -1405,27 +1404,27 @@ async function buildOverlayMain() {
         .addDiv({'id': 'bm-colorfilter-list', 'style': 'max-height: 125px; overflow: auto; touch-action: pan-x pan-y; display: flex; flex-direction: column; gap: 4px;'}).buildElement()
       .buildElement()
       // Template filter UI
-      .addDetails({'id': 'bm-contain-templatefilter', 'textContent': 'Templates', 'style': 'border: 1px solid rgba(255,255,255,0.1); padding: 4px; border-radius: 4px; margin-top: 4px;'}, (instance, summary, details) => {
+      .addDetails({'id': 'bm-contain-templatefilter', 'textContent': '템플릿', 'style': 'border: 1px solid rgba(255,255,255,0.1); padding: 4px; border-radius: 4px; margin-top: 4px;'}, (instance, summary, details) => {
         details.open = true;
       })
         // Template buttons
         .addDiv({'id': 'bm-contain-buttons-template', 'style': 'margin-bottom: 3px;'})
-          .addInputFile({'id': 'bm-input-file-template', 'textContent': 'Select Image', 'accept': 'image/png, image/jpeg, image/webp, image/bmp, image/gif'}) // .buildElement()
-          .addButton({'id': 'bm-button-create', 'textContent': 'Create Template', 'style': 'margin: 0 1ch;'}, (instance, button) => {
+          .addInputFile({'id': 'bm-input-file-template', 'textContent': '이미지 선택', 'accept': 'image/png, image/jpeg, image/webp, image/bmp, image/gif'}) // .buildElement()
+          .addButton({'id': 'bm-button-create', 'textContent': '템플릿 생성', 'style': 'margin: 0 1ch;'}, (instance, button) => {
             button.onclick = async () => {
               const input = document.querySelector('#bm-input-file-template');
 
               const coordTlX = document.querySelector('#bm-input-tx');
-              if (!coordTlX.checkValidity()) {coordTlX.reportValidity(); instance.handleDisplayError('Coordinates are malformed! Did you try clicking on the canvas first?'); return;}
+              if (!coordTlX.checkValidity()) {coordTlX.reportValidity(); instance.handleDisplayError('좌표가 잘못되었습니다! 캔버스를 클릭해 보셨나요?'); return;}
               const coordTlY = document.querySelector('#bm-input-ty');
-              if (!coordTlY.checkValidity()) {coordTlY.reportValidity(); instance.handleDisplayError('Coordinates are malformed! Did you try clicking on the canvas first?'); return;}
+              if (!coordTlY.checkValidity()) {coordTlY.reportValidity(); instance.handleDisplayError('좌표가 잘못되었습니다! 캔버스를 클릭해 보셨나요?'); return;}
               const coordPxX = document.querySelector('#bm-input-px');
-              if (!coordPxX.checkValidity()) {coordPxX.reportValidity(); instance.handleDisplayError('Coordinates are malformed! Did you try clicking on the canvas first?'); return;}
+              if (!coordPxX.checkValidity()) {coordPxX.reportValidity(); instance.handleDisplayError('좌표가 잘못되었습니다! 캔버스를 클릭해 보셨나요?'); return;}
               const coordPxY = document.querySelector('#bm-input-py');
-              if (!coordPxY.checkValidity()) {coordPxY.reportValidity(); instance.handleDisplayError('Coordinates are malformed! Did you try clicking on the canvas first?'); return;}
+              if (!coordPxY.checkValidity()) {coordPxY.reportValidity(); instance.handleDisplayError('좌표가 잘못되었습니다! 캔버스를 클릭해 보셨나요?'); return;}
 
               // Kills itself if there is no file
-              if (!input?.files[0]) {instance.handleDisplayError(`No file selected!`); return;}
+              if (!input?.files[0]) {instance.handleDisplayError(`파일이 선택되지 않았습니다!`); return;}
 
               await templateManager.createTemplate(
                 input.files[0],
@@ -1444,7 +1443,7 @@ async function buildOverlayMain() {
               // console.log(`TCoords: ${apiManager.templateCoordsTilePixel}\nCoords: ${apiManager.coordsTilePixel}`);
               // templateManager.setTemplateImage(input.files[0]);
 
-              instance.handleDisplayStatus(`Drew to canvas!`);
+              instance.handleDisplayStatus(`캔버스에 템플릿이 추가되었습니다!`);
             }
           }).buildElement()
           .addSelect({'id': 'bm-template-anchor'}, (instance, select) => {
@@ -1460,14 +1459,14 @@ async function buildOverlayMain() {
               "rb": "⟓",
             };
             const anchorTextX = {
-              "l": "Left",
-              "m": "Center",
-              "r": "Right",
+              "l": "왼쪽",
+              "m": "중앙",
+              "r": "오른쪽",
             };
             const anchorTextY = {
-              "t": "Top",
-              "m": "Middle",
-              "b": "Bottom",
+              "t": "위",
+              "m": "중앙",
+              "b": "아래",
             };
             const currentAnchor = templateManager.getAnchor();
             Object.entries(anchors).forEach(([anchor, displayText]) => {
@@ -1479,43 +1478,43 @@ async function buildOverlayMain() {
             });
             select.addEventListener('change', () => {
               templateManager.setAnchor(select.value);
-              instance.handleDisplayStatus(`Changed the default template anchor to "${anchorTextY[select.value[1]]} ${anchorTextX[select.value[0]]}".`);
+              instance.handleDisplayStatus(`기본 템플릿 정렬이 "${anchorTextY[select.value[1]]} ${anchorTextX[select.value[0]]}"로 변경되었습니다.`);
             })
           }).buildElement()
         .buildElement()
         .addDiv({'id': 'bm-templatefilter-list', 'style': 'max-height: 125px; overflow: auto; touch-action: pan-x pan-y; display: flex; flex-direction: column; gap: 4px;'}).buildElement()
       .buildElement()
       // Event UI
-      .addDetails({'id': 'bm-contain-eventitem', 'textContent': 'Event', 'style': 'border: 1px solid rgba(255,255,255,0.1); padding: 4px; border-radius: 4px; display: none; margin-top: 4px;'}, (instance, summary, details) => {
+      .addDetails({'id': 'bm-contain-eventitem', 'textContent': '이벤트', 'style': 'border: 1px solid rgba(255,255,255,0.1); padding: 4px; border-radius: 4px; display: none; margin-top: 4px;'}, (instance, summary, details) => {
         if (templateManager.isEventEnabled()) {
           details.style.display = '';
         }
         details.open = true;
       })
-        .addButton({'id': 'bm-button-set-eventprovider', 'textContent': 'Set Data Provider', 'style': 'margin: 0 1ch;'}, (instance, button) => {
+        .addButton({'id': 'bm-button-set-eventprovider', 'textContent': '데이터 제공자 설정', 'style': 'margin: 0 1ch;'}, (instance, button) => {
           button.onclick = () => {
             const currentProvider = templateManager.getEventProvider();
-            const providerURL = prompt('Enter the event data provider JSON URL:', currentProvider === "" ? "https://wplace.samuelscheit.com/tiles/pumpkin.json" : currentProvider);
+            const providerURL = prompt('이벤트 데이터 제공자의 JSON URL을 입력하세요:', currentProvider === "" ? "https://wplace.samuelscheit.com/tiles/pumpkin.json" : currentProvider);
             if (!providerURL) { return; }
             const isUrl = (content => {
               try { return Boolean(new URL(content)); }
               catch(e){ return false; }
             })(providerURL);
             if (!isUrl) {
-              alert("The URL you entered is not valid!");
+              alert("URL이 유효하지 않습니다!");
               return;
             }
             templateManager.setEventProvider(providerURL);
             buildEventList();
           };
         }).buildElement()
-        .addButton({'id': 'bm-button-refresh-event', 'textContent': 'Refresh Data', 'style': 'margin: 0 1ch;'}, (instance, button) => {
+        .addButton({'id': 'bm-button-refresh-event', 'textContent': '데이터 새로 고침', 'style': 'margin: 0 1ch;'}, (instance, button) => {
           button.onclick = () => buildEventList();
         }).buildElement()
         .addDiv({'id': 'bm-eventitem-list', 'style': 'max-height: 125px; overflow: auto; touch-action: pan-x pan-y; display: flex; flex-direction: column; gap: 4px;'}).buildElement()
       .buildElement()
       // Status
-      .addTextarea({'id': overlayMain.outputStatusId, 'placeholder': `Status: Sleeping...\nVersion: ${version}`, 'readOnly': true}, (instance, textarea) => {
+      .addTextarea({'id': overlayMain.outputStatusId, 'placeholder': `상태: 자는중...\n버전: ${version}`, 'readOnly': true}, (instance, textarea) => {
         if (templateManager.isStatusHidden()) {
           textarea.style.display = 'none';
         }
@@ -1525,13 +1524,13 @@ async function buildOverlayMain() {
           // .addButton({'id': 'bm-button-teleport', 'className': 'bm-help', 'textContent': '✈'}).buildElement()
           // .addButton({'id': 'bm-button-favorite', 'className': 'bm-help', 'innerHTML': '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><polygon points="10,2 12,7.5 18,7.5 13.5,11.5 15.5,18 10,14 4.5,18 6.5,11.5 2,7.5 8,7.5" fill="white"></polygon></svg>'}).buildElement()
           // .addButton({'id': 'bm-button-templates', 'className': 'bm-help', 'innerHTML': '🖌'}).buildElement()
-          .addButton({'id': 'bm-button-convert', 'className': 'bm-help', 'innerHTML': '🎨', 'title': 'Template Color Converter'}, 
+          .addButton({'id': 'bm-button-convert', 'className': 'bm-help', 'innerHTML': '🎨', 'title': '템플릿 색상 변환기'}, 
             (instance, button) => {
             button.addEventListener('click', () => {
               window.open('https://pepoafonso.github.io/color_converter_wplace/', '_blank', 'noopener noreferrer');
             });
           }).buildElement()
-          .addButton({'id': 'bm-button-website', 'className': 'bm-help', 'innerHTML': '🌐', 'title': 'Official Blue Marble Website'}, 
+          .addButton({'id': 'bm-button-website', 'className': 'bm-help', 'innerHTML': '🌐', 'title': '공식 블루 마블 웹사이트'}, 
             (instance, button) => {
             button.addEventListener('click', () => {
               window.open('https://bluemarble.lol/', '_blank', 'noopener noreferrer');
@@ -1539,7 +1538,7 @@ async function buildOverlayMain() {
           }).buildElement()
         .buildElement()
         .addDiv({'id': 'bm-footer'})
-          .addSmall({'textContent': `by SwingTheVine | Forked by TWY`, 'style': 'margin-top: auto;'}).buildElement()
+          .addSmall({'textContent': `SwingTheVine 제작 | TWY 포크 | sungsoos 번역`, 'style': 'margin-top: auto;'}).buildElement()
         .buildElement()
       .buildElement()
     .buildElement()
@@ -1592,10 +1591,10 @@ async function buildOverlayMain() {
       0
     );
 
-    colorFilterHeader.textContent = `Colors (${loadedTilesCount} / ${enabledTilesCount} Tiles Loaded)`
+    colorFilterHeader.textContent = `색상 (${loadedTilesCount} / ${enabledTilesCount} 타일 불러옴)`
 
     if (!listContainer || !(Object.keys(paletteSum).length)) {
-      if (listContainer) { listContainer.innerHTML = '<small>No template colors to display.</small>'; }
+      if (listContainer) { listContainer.innerHTML = '<small>표시할 템플릿 색상 없음.</small>'; }
       return;
     }
 
@@ -1633,11 +1632,11 @@ async function buildOverlayMain() {
       // Special handling for "other" and "transparent"
       if (rgb === 'other') {
         swatch.style.background = '#888'; // Neutral color for "Other"
-        colorName = "Other";
+        colorName = "기타";
         colorKey = "other";
       } else if (rgb === '#deface') { // legacy name?
         swatch.style.background = '#deface';
-        colorName = "Transparent";
+        colorName = "투명";
         colorKey = "transparent";
       } else {
         const [r, g, b] = rgb.split(',').map(Number);
@@ -1663,7 +1662,7 @@ async function buildOverlayMain() {
 
       if (sortByParts[0] === "remaining" || (hideCompleted && sortByParts[0] !== "painted")) {
         const remainingLabelText = (totalCount - paintedCount).toLocaleString();
-        label.textContent = `${colorName} • ${remainingLabelText} Left`;
+        label.textContent = `${colorName} • ${remainingLabelText} 남음`;
       } else {
         const labelText = totalCount.toLocaleString();
         const paintedLabelText = paintedCount.toLocaleString();
@@ -1725,12 +1724,12 @@ async function buildOverlayMain() {
     if (!hasColors && listContainer) {
       if (hideLocked) {
         if (hideCompleted) {
-          listContainer.innerHTML = '<small>All owned colors have been completed.</small>';
+          listContainer.innerHTML = '<small>모든 소유한 색상이 완료되었습니다.</small>';
         } else {
-          listContainer.innerHTML = '<small>Remaining colors are all locked.</small>';
+          listContainer.innerHTML = '<small>남은 색상은 모두 잠겨 있습니다.</small>';
         }
       } else { // hideCompleted
-        listContainer.innerHTML = '<small>All colors have been completed.</small>';
+        listContainer.innerHTML = '<small>모든 색상이 완료되었습니다.</small>';
       }
     }
   };
@@ -1740,7 +1739,7 @@ async function buildOverlayMain() {
     const templateFilterHeader = document.querySelector('#bm-contain-templatefilter > summary');
     consoleLog(templateManager);
     if (templateManager.templatesArray?.length === 0) {
-      if (listContainer) { listContainer.innerHTML = '<small>No templates to display.</small>'; }
+      if (listContainer) { listContainer.innerHTML = '<small>표시할 템플릿 없음.</small>'; }
       return;
     }
 
@@ -1772,7 +1771,7 @@ async function buildOverlayMain() {
       row.style.gap = '6px';
 
       let removeButton = document.createElement('a');
-      removeButton.title = "Remove template";
+      removeButton.title = "템플릿 제거";
       removeButton.textContent = "🗑️";
       removeButton.style.fontSize = '12px';
       removeButton.onclick = () => {
@@ -1782,7 +1781,7 @@ async function buildOverlayMain() {
       }
 
       let teleportButton = document.createElement('a');
-      teleportButton.title = "Teleport to template";
+      teleportButton.title = "템플릿으로 이동";
       teleportButton.textContent = "✈️";
       teleportButton.style.fontSize = '12px';
       teleportButton.onclick = () => {
@@ -1800,7 +1799,7 @@ async function buildOverlayMain() {
       renameElement.textContent = templateName;
       renameElement.addEventListener('click', () => {
         const currentName = template["displayName"];
-        const newName = prompt("Rename template", currentName);
+        const newName = prompt("템플릿 이름 변경", currentName);
         if (newName) {
           const trimmedName = newName.trim();
           if (trimmedName === currentName) {
@@ -1828,7 +1827,7 @@ async function buildOverlayMain() {
       toggle.checked = template.enabled;
       toggle.addEventListener('change', () => {
         template.enabled = toggle.checked;
-        overlayMain.handleDisplayStatus(`${toggle.checked ? 'Enabled' : 'Disabled'} ${templateName}`);
+        overlayMain.handleDisplayStatus(`${toggle.checked ? '활성화됨' : '비활성화됨'} ${templateName}`);
         if (toggle.checked) {
           // reset cache if it is being toggled on
           // since we need the updated enabled count for each color
@@ -1865,12 +1864,12 @@ async function buildOverlayMain() {
     const showUnavailable = templateManager.isEventUnavailableShown();
     const provider = apiManager.eventDataURL ?? templateManager.getEventProvider();
     if (apiManager.eventClaimed === null) {
-      listContainer.innerHTML = '<small>The event claimed items list is not loaded. Make sure you have clicked the ongoing Event button from the top left corner.</small>';
+      listContainer.innerHTML = '<small>이벤트 소유 아이템 목록이 로드되지 않았습니다. 상단 왼쪽 모서리의 진행 중인 이벤트 버튼을 클릭했는지 확인하세요.</small>';
       return;
     };
     if (apiManager.eventData === null && (provider === null || provider == "")) {
       // rely on external sources
-      listContainer.innerHTML = '<small>Event data provider is not set.</small>';
+      listContainer.innerHTML = '<small>이벤트 데이터 제공자가 설정되지 않았습니다.</small>';
       return;
     };
     const eventClaimedList = new Set(apiManager.eventClaimed);
@@ -1889,7 +1888,7 @@ async function buildOverlayMain() {
     ).then(data => {
       consoleLog("event Location data", data);
       if (typeof data !== 'object') {
-        listContainer.innerHTML = '<small>The event data provider does not provide a known format.</small>';
+        listContainer.innerHTML = '<small>이벤트 데이터 제공자가 알려진 형식을 제공하지 않습니다.</small>';
         return;
       }
       listContainer.textContent = "";
@@ -1931,7 +1930,7 @@ async function buildOverlayMain() {
             const foundTimestamp = new Date(info['foundAt']).getTime();
             const foundHour = foundTimestamp - (foundTimestamp % 3600000);
             if (currentHour !== foundHour) {
-              coordStatus = "Expired • ";
+              coordStatus = "만료됨 • ";
               if (!showUnavailable) return;
             }
           }
@@ -1939,7 +1938,7 @@ async function buildOverlayMain() {
 
         if (coords !== null) {
           let teleportButton = document.createElement('a');
-          teleportButton.title = "Teleport to event item";
+          teleportButton.title = "이벤트 아이템으로 이동";
           teleportButton.textContent = "✈️";
           teleportButton.style.fontSize = '12px';
           teleportButton.onclick = () => {
@@ -1962,7 +1961,7 @@ async function buildOverlayMain() {
           }
           row.appendChild(teleportButton);
         } else {
-          coordStatus = "Unknown Coordinate Format • ";
+          coordStatus = "알 수 없는 좌표 형식 • ";
         }
 
         let label = document.createElement('span');
@@ -1973,10 +1972,10 @@ async function buildOverlayMain() {
         hasEntries = true;
       });
       if (!hasEntries && listContainer) {
-        listContainer.innerHTML = `<small>No ${showClaimed ? "" : "unclaimed "}items have ${showUnavailable ? "" : "recent "}data available.</small>`;
+        listContainer.innerHTML = `<small>${showClaimed ? "" : "비획득 "}아이템에 ${showUnavailable ? "" : "최근 "}데이터가 없습니다.</small>`;
       }
     }).catch(err => {
-      listContainer.innerHTML = '<small>Failed fetching the event item info from the event data provider. Make sure the provider URL is a valid JSON resource and can be accessed with appropriate CORS.</small>';
+      listContainer.innerHTML = '<small>이벤트 아이템 정보를 가져오지 못했습니다. 데이터 제공자의 URL이 유효한 JSON 리소스인지 그리고 적절한 CORS 설정이 되었는지 확인하세요.</small>';
     });
 
   };

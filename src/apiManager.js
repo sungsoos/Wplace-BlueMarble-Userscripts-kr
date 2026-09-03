@@ -322,13 +322,13 @@ export default class ApiManager {
       const buttonCopy = function () {
         const content = this.dataset.text;
         copyToClipboard(content);
-        alert('Copied to clipboard: ' + content);
+        alert('클립보드에 복사됨: ' + content);
       }
 
       displayCoords1Copy = document.createElement('a');
       displayCoords1Copy.href = '#';
       displayCoords1Copy.id = 'bm-display-coords1-copy';
-      displayCoords1Copy.textContent = 'Copy';
+      displayCoords1Copy.textContent = '복사';
       displayCoords1Copy.style = 'font-size: small; text-decoration: underline;';
       displayCoords1Copy.className = "text-nowrap";
       displayCoords1Copy.addEventListener('click', buttonCopy);
@@ -348,7 +348,7 @@ export default class ApiManager {
       displayCoords2Copy = document.createElement('a');
       displayCoords2Copy.href = '#';
       displayCoords2Copy.id = 'bm-display-coords2-copy';
-      displayCoords2Copy.textContent = 'Copy';
+      displayCoords2Copy.textContent = '복사';
       displayCoords2Copy.style = 'font-size: small; text-decoration: underline;';
       displayCoords2Copy.className = "text-nowrap";
       displayCoords2Copy.addEventListener('click', buttonCopy);
@@ -383,7 +383,7 @@ export default class ApiManager {
         if (!buttonContainer) return;
         btnLineTemplate = document.createElement('span');
         btnLineTemplate.id = 'bm-create-line-template';
-        btnLineTemplate.textContent = "／ Line Template";
+        btnLineTemplate.textContent = "／ 선 템플릿";
         btnLineTemplate.className = buttonContainer.querySelector("button").className; // Copy from an existing button
         btnLineTemplate.classList.add("btn-soft"); // not the primary button
         btnLineTemplate.style.marginLeft = "12px";
@@ -393,11 +393,11 @@ export default class ApiManager {
         pixelInfoContainer.appendChild(btnLineTemplate);
         btnLineTemplate.addEventListener('click', function () {
           if (!areOverlayCoordsFilledAndValid()) {
-            alert(`Some coordinates textboxes are empty or invalid!`);
+            alert(`일부 좌표 입력란이 비어 있거나 유효하지 않습니다!`);
             return;
           };
           if (that.coordsTilePixel.length !== 4) {
-            alert(`Coordinates are malformed! Did you try clicking on the canvas first?`);
+            alert(`좌표가 잘못되었습니다! 캔버스를 클릭해 보셨나요?`);
             return;
           };
           const overlayCoords = getOverlayCoords();
@@ -409,7 +409,7 @@ export default class ApiManager {
           );
           const defaultDrawMult = that.templateManager.drawMult;
           if (!testCanvasSize(width * defaultDrawMult, height * defaultDrawMult)) {
-            alert(`The line is too large for the browser to handle.`);
+            alert(`선이 브라우저가 처리할 수 있는 크기보다 큽니다.`);
             return;
           }
           const x0 = (coordsTile[0] % 2048) * 1000 + (coordsPixel[0] % 1000);
@@ -430,7 +430,7 @@ export default class ApiManager {
           const py1 = top % 1000;
           that.templateManager.createTemplate(
             imageData,
-            `${currentColorInfo?.name ?? 'Unknown Color'} Line`,
+            `${currentColorInfo?.name ?? '알 수 없는 색상'} 선`,
             [tx1, ty1, px1, py1],
             "lt",
           )
@@ -453,7 +453,7 @@ export default class ApiManager {
         if (!buttonContainer) return;
         btnCircleTemplate = document.createElement('span');
         btnCircleTemplate.id = 'bm-create-circle-template';
-        btnCircleTemplate.textContent = "○ Circle Template";
+        btnCircleTemplate.textContent = "○ 원 템플릿";
         btnCircleTemplate.className = buttonContainer.querySelector("button").className; // Copy from an existing button
         btnCircleTemplate.classList.add("btn-soft"); // not the primary button
         btnCircleTemplate.style.marginLeft = "12px";
@@ -463,11 +463,11 @@ export default class ApiManager {
         pixelInfoContainer.appendChild(btnCircleTemplate);
         btnCircleTemplate.addEventListener('click', function () {
           if (!areOverlayCoordsFilledAndValid()) {
-            alert(`Some coordinates textboxes are empty or invalid!`);
+            alert(`일부 좌표 입력란이 비어 있거나 유효하지 않습니다!`);
             return;
           };
           if (that.coordsTilePixel.length !== 4) {
-            alert(`Coordinates are malformed! Did you try clicking on the canvas first?`);
+            alert(`좌표가 잘못되었습니다! 캔버스를 클릭해 보셨나요?`);
             return;
           };
           const overlayCoords = getOverlayCoords();
@@ -481,7 +481,7 @@ export default class ApiManager {
           const diameter = y * 2 + 1;
           const defaultDrawMult = that.templateManager.drawMult;
           if (!testCanvasSize(diameter * defaultDrawMult, diameter * defaultDrawMult)) {
-            alert(`The line is too large for the browser to handle.`);
+            alert(`원이 브라우저가 처리할 수 있는 크기보다 큽니다.`);
             return;
           }
           const x0 = (overlayCoords[0][0] % 2048) * 1000 + (overlayCoords[1][0] % 1000);
@@ -502,7 +502,7 @@ export default class ApiManager {
           const py1 = offsetY % 1000;
           that.templateManager.createTemplate(
             imageData,
-            `${currentColorInfo?.name ?? 'Unknown Color'} Circle`,
+            `${currentColorInfo?.name ?? '알 수 없는 색상'} 원`,
             [tx1, ty1, px1, py1],
             "lt",
           )
@@ -539,7 +539,7 @@ export default class ApiManager {
         element.style.maxHeight = "91.6667vh"; // Safari is too stupid to handle the original percentage max-height
 
         const h3 = document.createElement('h3');
-        h3.innerText = 'Download as Template';
+        h3.innerText = '템플릿으로 다운로드';
         h3.className = "mb-1 mt-5 flex items-center gap-1 text-xl font-semibold";
         container.appendChild(h3);
 
@@ -547,9 +547,9 @@ export default class ApiManager {
         instruction.className = `bg-base-200 border-base-content/10 rounded-xl border-2 p-3`;
         instruction.style.fontSize = "small";
         instruction.innerText = [
-          'Instruction to mark the rectangular range for downloading:',
-          '1. Pick the first reference point (e.g. the Top Left Corner) and use the "Pin" icon to record the coordinates.',
-          '2. Pick the second reference point, i.e. the opposite corner (e.g. the Bottom Right Corner), and click the "Share" button.'
+          '다각형 범위를 지정하여 템플릿으로 다운로드:',
+          '1. 첫 번째 참조 지점을 선택합니다 (예: 왼쪽 위 모서리) 그리고 "핀" 아이콘을 사용하여 좌표를 기록합니다.',
+          '2. 두 번째 참조 지점을 선택합니다, 즉 반대 모서리 (예: 오른쪽 아래 모서리), 그리고 "공유" 버튼을 클릭합니다.'
         ].join("\n");
         container.appendChild(instruction);
 
@@ -590,7 +590,7 @@ export default class ApiManager {
         svg.appendChild(path);
         downloadBtn.appendChild(svg);
 
-        downloadBtn.appendChild(document.createTextNode(' Download'));
+        downloadBtn.appendChild(document.createTextNode(' 다운로드'));
 
         const that = this;
         downloadBtn.addEventListener('click', async function () {
@@ -598,7 +598,7 @@ export default class ApiManager {
           const coordsTile = [ that.coordsTilePixel[0], that.coordsTilePixel[1] ];
           const coordsPixel = [ that.coordsTilePixel[2], that.coordsTilePixel[3] ];
           if (!areOverlayCoordsFilledAndValid()) {
-            alert(`Some coordinates textboxes are empty or invalid!`);
+            alert(`일부 좌표 입력란이 비어 있거나 유효하지 않습니다!`);
             return;
           }
           const overlayCoords = getOverlayCoords();
@@ -642,7 +642,7 @@ export default class ApiManager {
             a.click();
             URL.revokeObjectURL(a.href);
           } catch (e) {
-            alert(`Download Failed!`);
+            alert(`다운로드 실패!`);
             throw e;
           } finally {
             progress.hidden = true;
@@ -670,17 +670,17 @@ export default class ApiManager {
         const ty2 = Math.floor(bottom / 1000);
         const px2 = right % 1000;
         const py2 = bottom % 1000;
-        buttonLines.push(`Top Left: (Tl X: ${tx1}, Tl Y: ${ty1}, Px X: ${px1}, Px Y: ${py1})`);
-        buttonLines.push(`Bottom Right: (Tl X: ${tx2}, Tl Y: ${ty2}, Px X: ${px2}, Px Y: ${py2})`);
-        buttonLines.push(`Image Size: ${width}×${height}`);
+        buttonLines.push(`왼쪽 위: (Tl X: ${tx1}, Tl Y: ${ty1}, Px X: ${px1}, Px Y: ${py1})`);
+        buttonLines.push(`오른쪽 아래: (Tl X: ${tx2}, Tl Y: ${ty2}, Px X: ${px2}, Px Y: ${py2})`);
+        buttonLines.push(`이미지 크기: ${width}×${height}`);
         if (testCanvasSize(width, height)) {
           downloadBtn.disabled = false;
         } else {
           downloadBtn.disabled = true;
-          buttonLines.push(`Too large for the browser to export.`);
+          buttonLines.push(`이미지 크기가 브라우저가 처리할 수 있는 크기보다 큽니다.`);
         }
       } else {
-        buttonLines.push(`Some coordinates textboxes are empty or invalid.`);
+        buttonLines.push(`일부 좌표 입력란이 비어 있거나 유효하지 않습니다.`);
         downloadBtn.disabled = true;
       }
       downloadBtnDim.innerText = buttonLines.join('\n');
@@ -715,7 +715,7 @@ export default class ApiManager {
       // E.g. "wplace.live/api/files/s0/tiles/0/0/0.png" -> "tiles"
       const endpointText = data['endpoint']?.split('?')[0].split('/').filter(s => s && isNaN(Number(s))).filter(s => s && !s.includes('.')).pop();
 
-      console.log(`%cBlue Marble%c: Recieved message about "%s"`, 'color: cornflowerblue;', '', endpointText);
+      console.log(`%cBlue Marble%c: Received message about "%s"`, 'color: cornflowerblue;', '', endpointText);
 
       // Each case is something that Blue Marble can use from the fetch.
       // For instance, if the fetch was for "me", we can update the overlay stats
@@ -728,7 +728,7 @@ export default class ApiManager {
             // The server is probably down (NOT a 2xx status)
             
             if (!(dataJSON['fallback'] ?? false)) {
-              overlay.handleDisplayError(`You are not logged in!\nCould not fetch userdata.`);
+              overlay.handleDisplayError(`로그인하지 않았습니다!\n사용자 데이터를 가져올 수 없습니다.`);
             }
             return; // Kills itself before attempting to display null userdata
           }
@@ -760,7 +760,7 @@ export default class ApiManager {
           
           // Don't save the coords if there are previous coords that could be used
           if (this.coordsTilePixel.length && (!coordsTile.length || !coordsPixel.length)) {
-            overlay.handleDisplayError(`Coordinates are malformed!\nDid you try clicking the canvas first?`);
+            overlay.handleDisplayError(`좌표가 올바르지 않습니다!\n캔버스를 먼저 클릭해 보셨나요?`);
             return; // Kills itself
           }
 

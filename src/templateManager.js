@@ -141,7 +141,7 @@ export default class TemplateManager {
     // Creates the JSON object if it does not already exist
     if (!this.templatesJSON) {this.templatesJSON = await this.createJSON(); console.log(`Creating JSON...`);}
 
-    this.overlay.handleDisplayStatus(`Creating template at ${coords.join(', ')}...`);
+    this.overlay.handleDisplayStatus(`${coords.join(', ')}에 템플릿 생성 중...`);
 
     // Creates a new template instance
     const authorID = numberToEncoded(this.userID || 0, this.encodingBase);
@@ -200,7 +200,7 @@ export default class TemplateManager {
     // Display pixel count statistics with internationalized number formatting
     // This provides immediate feedback to users about template complexity and size
     const pixelCountFormatted = new Intl.NumberFormat().format(template.pixelCount);
-    this.overlay.handleDisplayStatus(`Template created at ${coords.join(', ')}! Total pixels: ${pixelCountFormatted}`);
+    this.overlay.handleDisplayStatus(`${coords.join(', ')}에 템플릿이 생성되었습니다! 총 픽셀 수: ${pixelCountFormatted}`);
 
     // Ensure color filter UI is visible when a template is created
     this.requestListRebuild();
@@ -272,7 +272,7 @@ export default class TemplateManager {
     this.clearTileProgress(targetTemplate);
     removeLayer(null, targetTemplate.sortID);
 
-    this.overlay.handleDisplayStatus(`Template ${targetTemplate.displayName} is deleted!`);
+    this.overlay.handleDisplayStatus(`${targetTemplate.displayName} 템플릿이 삭제되었습니다!`);
   
     await this.storeTemplates();
     this.requestListRebuild();
@@ -642,7 +642,7 @@ export default class TemplateManager {
     const wrongStr = new Intl.NumberFormat().format(totalRequired - aggPainted); // Used to be aggWrong, but that is bugged
 
     this.overlay.handleDisplayStatus(
-      `Displaying ${enabledTemplateCount} template${enabledTemplateCount == 1 ? '' : 's'}.\nPainted ${paintedStr} / ${requiredStr} • Wrong ${wrongStr}`
+      `${enabledTemplateCount}개의 템플릿을 표시 중입니다.\n칠해짐: ${paintedStr} / ${requiredStr} • 잘못됨: ${wrongStr}`
     );
 
     console.log('Cleaning up...', performance.now() - timeStart + ' ms');
@@ -1003,7 +1003,7 @@ export default class TemplateManager {
           const templateKeyArray = templateKey.split(' '); // E.g., "0 $Z" -> ["0", "$Z"]
           const sortID = Number(templateKeyArray?.[0]); // Sort ID of the template
           const authorID = templateKeyArray?.[1] || '0'; // User ID of the person who exported the template
-          const displayName = templateValue.name || `Template ${sortID || ''}`; // Display name of the template
+          const displayName = templateValue.name || `템플릿 ${sortID || ''}`; // Display name of the template
           const tilesbase64 = templateValue.tiles;
           const templateTiles = {}; // Stores the template bitmap tiles for each tile.
           const templateTilesBuffer = {}; // Store the template bitmap tiles for each tile in Uint8Array.

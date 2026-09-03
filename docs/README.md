@@ -1,427 +1,342 @@
-Preview Images of This Fork:
+## 원래 쓰던 블루 마블을 갈아 끼울 수 있습니다 (데이터 손실 없이요)
+이 포크의 미리보기 이미지:
 
-| Template | Overlay |
+| 템플릿 | 창 |
 |-|-|
-| ![Template](assets/Template.png) | ![Overlay](assets/Overlay.png) |
+| ![템플릿](assets/Template.png) | ![창](assets/Overlay.png) |
 
-| Pixel Info | Map Export (From the Share Dialog) |
+| 픽셀 정보 | 지도 내보내기 (공유 창에서) |
 |-|-|
-|Wplace 1.1.1 ~ Now:<br>![Pixel Info](assets/PixelInfo111.png)<br>Wplace 1.1.0:<br>![Pixel Info](assets/PixelInfo110.png)<br>Wplace 1.0.0:<br>![Pixel Info](assets/PixelInfo100.png) | ![Map Export](assets/ExportMap.png)
+|Wplace 1.1.1 ~ 지금:<br>![픽셀 정보](assets/PixelInfo111.png)<br>Wplace 1.1.0:<br>![픽셀 정보](assets/PixelInfo110.png)<br>Wplace 1.0.0:<br>![픽셀 정보](assets/PixelInfo100.png) | ![지도 내보내기](assets/ExportMap.png)
 
-More Information Regarding this Fork **[Here](#regarding-this-fork)**.
+**[여기에](#regarding-this-fork)** 이 포크에 대한 정보가 더 있습니다.
 
-<strong>One-click install:</strong> Click this link to Install Blue Marble directly: <a href="https://raw.githubusercontent.com/t-wy/Wplace-BlueMarble-Userscripts/custom-improve/dist/BlueMarble.user.js" target="_blank" rel="noopener noreferrer"><strong>Install Blue Marble</strong></a>
+<strong>원클릭 설치:</strong> 이 링크를 눌러 바로 블루 마블을 설치하세요: <a href="https://raw.githubusercontent.com/sungsoos/Wplace-BlueMarble-Userscripts-kr/custom-improve/dist/BlueMarble.user.js" target="_blank" rel="noopener noreferrer"><strong>블루 마블 설치하기</strong></a>
 
-**[Bookmarklet version](/dist/BlueMarble.bookmarklet.min.js)** is also available.
-To use it, copy the content and paste it in the URL field when creating a bookmark.
+**[북마크 버전](/dist/BlueMarble.bookmarklet.min.js)** 도 사용 가능합니다.
+사용하려면, 내용을 복사한 뒤 북마크를 만들 때 링크 입력란에 붙여넣으세요.
 
 <table>
   <tr>
-    <td><a href="#blue-marble">Blue Marble</a></td>
-    <td valign="top" rowspan="99"><a href="https://discord.gg/tpeBPy46hf"><img alt="Discord Banner" src="https://discord.com/api/guilds/796124137042608188/widget.png?style=banner4"></a></td>
+    <td><a href="#블루-마블">블루 마블</a></td>
+    <td valign="top" rowspan="99"><a href="https://discord.gg/tpeBPy46hf"><img alt="디스코드 배너" src="https://discord.com/api/guilds/796124137042608188/widget.png?style=banner4"></a></td>
   </tr>
   <tr>
-    <td>&emsp;<a href="#regarding-this-fork">Regarding this fork</a></td>
+    <td>&emsp;<a href="#이-포크에-대하여">이 포크에 대하여</a></td>
   </tr>
   <tr>
-    <td>&emsp;<a href="#quick-guide">Quick Guide</a></td>
+    <td>&emsp;<a href="#빠른-가이드">빠른 가이드</a></td>
   </tr>
   <tr>
-    <td>&emsp;<a href="#overview">Overview</a></td>
+    <td>&emsp;<a href="#개요">개요</a></td>
   </tr>
   <tr>
-    <td>&emsp;&emsp;<a href="#installation-instructions">Installation Instructions</a></td>
+    <td>&emsp;&emsp;<a href="#설치-가이드">설치 가이드</a></td>
   </tr>
   <tr>
-    <td>&emsp;&emsp;<a href="#script-settings">Script Settings</a></td>
+    <td>&emsp;&emsp;<a href="#스크립트-설정">스크립트 설정</a></td>
   </tr>
   <tr>
-    <td>&emsp;&emsp;<a href="#template-settings">Template Settings</a></td>
+    <td>&emsp;&emsp;<a href="#템플릿-가이드">템플릿 설정</a></td>
   </tr>
   <tr>
-    <td>&emsp;<a href="#how-versioning-works">How Versioning Works</a></td>
+    <td>&emsp;<a href="#버전-관리-방식">버전 관리 방식</a></td>
   </tr>
   <tr>
-    <td>&emsp;<a href="#licenses">Licenses</a></td>
+    <td>&emsp;<a href="#라이선스">라이선스</a></td>
   </tr>
   <tr>
-    <td>&emsp;<a href="#faq">FAQ</a></td>
+    <td>&emsp;<a href="#자주-묻는-질문">자주 묻는 질문</a></td>
   </tr>
   <tr>
-    <td>&emsp;&emsp;<a href="#is-blue-marble-malware">Is Blue Marble malware?</a></td>
+    <td>&emsp;&emsp;<a href="#블루-마블은-악성코드인가요">블루 마블은 악성코드인가요?</a></td>
   </tr>
   <tr>
-    <td>&emsp;&emsp;<a href="#how-can-blue-marble-place-pixels-for-me">How can Blue Marble place pixels for me?</a></td>
+    <td>&emsp;&emsp;<a href="#블루-마블이-알아서-픽셀을-찍어줄-수-있나요">블루 마블이 알아서 픽셀을 찍어줄 수 있나요?</a></td>
   </tr>
   <tr>
-    <td>&emsp;&emsp;<a href="#how-do-i-hide-the-overlay">How do I hide the overlay?</a></td>
+    <td>&emsp;&emsp;<a href="#창을-어떻게-숨기나요">창을 어떻게 숨기나요?</a></td>
   </tr>
   <tr>
-    <td>&emsp;&emsp;<a href="#why-do-game-notifications-appear-on-top-of-the-overlay">Why do game notifications appear on top of the overlay?</a></td>
+    <td>&emsp;&emsp;<a href="#왜-게임-알림이-창보다-위에-표시되나요">왜 게임 알림이 창보다 위에 표시되나요?</a></td>
   </tr>
 </table>
 
-<h1>Blue Marble</h1>
-<a href="https://status.wplace.lol" target="_blank" rel="noopener noreferrer"><img alt="Wplace Status" src="https://status.wplace.lol/badge/_/status?labelColor=5f5f5f&color=&style=flat&label=Wplace%20Status"></a>
-<a href="" target="_blank" rel="noopener noreferrer"><img alt="Latest Version" src="https://img.shields.io/badge/Latest_Version-0.87.20-lightblue?style=flat"></a>
-<a href="https://github.com/t-wy/Wplace-BlueMarble-Userscripts/releases" target="_blank" rel="noopener noreferrer"><img alt="Latest Release" src="https://img.shields.io/github/v/release/t-wy/Wplace-BlueMarble-Userscripts?sort=semver&style=flat&label=Latest%20Release&color=blue"></a>
-<a href="https://github.com/t-wy/Wplace-BlueMarble-Userscripts/blob/main/LICENSE.txt" target="_blank" rel="noopener noreferrer"><img alt="Software License: MPL-2.0" src="https://img.shields.io/badge/Software_License-MPL--2.0-slateblue?style=flat"></a>
-<a href="https://discord.gg/tpeBPy46hf" target="_blank" rel="noopener noreferrer"><img alt="Contact Me" src="https://img.shields.io/badge/Contact_Me-gray?style=flat&logo=Discord&logoColor=white&logoSize=auto&labelColor=cornflowerblue"></a>
-<a href="https://bluemarble.lol/" target="_blank" rel="noopener noreferrer"><img alt="Blue Marble Website" src="https://img.shields.io/badge/Blue_Marble_Website-Camille_Daguin-blue?style=flat&logo=globe&logoColor=white"></a>
-<a href="" target="_blank" rel="noopener noreferrer"><img alt="WakaTime" src="https://img.shields.io/badge/Coding_Time-124hrs_4mins-blue?style=flat&logo=wakatime&logoColor=black&logoSize=auto&labelColor=white"></a>
-<a href="" target="_blank" rel="noopener noreferrer"><img alt="Total Patches" src="https://img.shields.io/badge/Total_Patches-503-black?style=flat"></a>
-<a href="" target="_blank" rel="noopener noreferrer"><img alt="Total Lines of Code" src="https://tokei.rs/b1/github/t-wy/Wplace-BlueMarble-Userscripts?category=code"></a>
-<a href="" target="_blank" rel="noopener noreferrer"><img alt="Total Comments" src="https://tokei.rs/b1/github/t-wy/Wplace-BlueMarble-Userscripts?category=comments"></a>
-<a href="" target="_blank" rel="noopener noreferrer"><img alt="Compression" src="https://img.shields.io/badge/Compression-68.34%25-blue"></a>
-<a href="" target="_blank" rel="noopener noreferrer"><img alt="Repo Size" src="https://img.shields.io/github/repo-size/t-wy/Wplace-BlueMarble-Userscripts"></a>
-<a href="" target="_blank" rel="noopener noreferrer"><img alt="Visitors" src="https://img.shields.io/badge/Visitors-439_667-gainsboro?style=flat"></a>
-<a href="" target="_blank" rel="noopener noreferrer"><img alt="Downloads" src="https://img.shields.io/github/downloads/t-wy/Wplace-BlueMarble-Userscripts/total.svg"></a>
-<a href="" target="_blank" rel="noopener noreferrer"><img alt="Build" src="https://github.com/t-wy/Wplace-BlueMarble-Userscripts/actions/workflows/build.yml/badge.svg"></a>
-<a href="" target="_blank" rel="noopener noreferrer"><img alt="Pages" src="https://github.com/t-wy/Wplace-BlueMarble-Userscripts/actions/workflows/pages/pages-build-deployment/badge.svg?branch=wiki"></a>
-<a href="" target="_blank" rel="noopener noreferrer"><img alt="CodeQL" src="https://github.com/t-wy/Wplace-BlueMarble-Userscripts/actions/workflows/github-code-scanning/codeql/badge.svg"></a>
+<h1>블루 마블</h1>
+<a href="https://status.wplace.lol" target="_blank" rel="noopener noreferrer"><img alt="Wplace 상태" src="https://status.wplace.lol/badge/_/status?labelColor=5f5f5f&color=&style=flat&label=Wplace%20%EC%83%81%ED%83%9C"></a>
+<a href="" target="_blank" rel="noopener noreferrer"><img alt="최신 버전" src="https://img.shields.io/badge/Latest_Version-0.87.20-lightblue?style=flat&label=%EC%B5%9C%EC%8B%A0%20%EB%B2%84%EC%A0%84
+"></a>
+<a href="https://github.com/sungsoos/Wplace-BlueMarble-Userscripts-kr/releases" target="_blank" rel="noopener noreferrer"><img alt="최신 릴리즈" src="https://img.shields.io/github/v/release/sungsoos/Wplace-BlueMarble-Userscripts-kr?sort=semver&style=flat&label=%EC%B5%9C%EC%8B%A0%20%EB%A6%B4%EB%A6%AC%EC%A6%88&color=blue"></a>
+<a href="https://github.com/sungsoos/Wplace-BlueMarble-Userscripts-kr/blob/main/LICENSE.txt" target="_blank" rel="noopener noreferrer"><img alt="소프트웨어 라이선스: MPL-2.0" src="https://img.shields.io/badge/Software_License-MPL--2.0-slateblue?style=flat&label=%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%20%EB%9D%BC%EC%9D%B4%EC%84%A0%EC%8A%A4"></a>
+<a href="https://discord.gg/tpeBPy46hf" target="_blank" rel="noopener noreferrer"><img alt="연락하기" src="https://img.shields.io/badge/%EC%97%B0%EB%9D%BD%ED%95%98%EA%B8%B0-gray?style=flat&logo=Discord&logoColor=white&logoSize=auto&labelColor=cornflowerblue"></a>
+<a href="https://bluemarble.lol/" target="_blank" rel="noopener noreferrer"><img alt="블루 마블 웹사이트" src="https://img.shields.io/badge/%EB%B8%94%EB%A3%A8%20%EB%A7%88%EB%B8%94%20%EC%9B%B9%EC%82%AC%EC%9D%B4%ED%8A%B8-Camille_Daguin-blue?style=flat&logo=globe&logoColor=white"></a>
+<a href="" target="_blank" rel="noopener noreferrer"><img alt="WakaTime" src="https://img.shields.io/badge/%EC%BD%94%EB%94%A9%20%EC%8B%9C%EA%B0%84-124hrs_4mins-blue?style=flat&logo=wakatime&logoColor=black&logoSize=auto&labelColor=white"></a>
+<a href="" target="_blank" rel="noopener noreferrer"><img alt="총 패치" src="https://img.shields.io/badge/%EC%B4%9D%20%ED%8C%A8%EC%B9%98%EB%93%A4-503-black?style=flat"></a>
+<a href="" target="_blank" rel="noopener noreferrer"><img alt="총 코드 줄" src="https://tokei.rs/b1/github/sungsoos/Wplace-BlueMarble-Userscripts-kr?category=code"></a>
+<a href="" target="_blank" rel="noopener noreferrer"><img alt="총 주석" src="https://tokei.rs/b1/github/sungsoos/Wplace-BlueMarble-Userscripts-kr?category=comments"></a>
+<a href="" target="_blank" rel="noopener noreferrer"><img alt="압축률" src="https://img.shields.io/badge/%EC%95%95%EC%B6%95%EB%A5%A0-68.34%25-blue"></a>
+<a href="" target="_blank" rel="noopener noreferrer"><img alt="리포지토리 크기" src="https://img.shields.io/github/repo-size/sungsoos/Wplace-BlueMarble-Userscripts-kr?label=%EB%A6%AC%ED%8F%AC%EC%A7%80%ED%86%A0%EB%A6%AC%20%ED%81%AC%EA%B8%B0"></a>
+<a href="" target="_blank" rel="noopener noreferrer"><img alt="방문자" src="https://img.shields.io/badge/%EB%B0%A9%EB%AC%B8%EC%9E%90-439_667-gainsboro?style=flat"></a>
+<a href="" target="_blank" rel="noopener noreferrer"><img alt="다운로드 수" src="https://img.shields.io/github/downloads/sungsoos/Wplace-BlueMarble-Userscripts-kr/total.svg?label=%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C%20%EC%88%98"></a>
+<a href="" target="_blank" rel="noopener noreferrer"><img alt="빌드" src="https://github.com/sungsoos/Wplace-BlueMarble-Userscripts-kr/actions/workflows/build.yml/badge.svg"></a>
+<a href="" target="_blank" rel="noopener noreferrer"><img alt="페이지" src="https://github.com/sungsoos/Wplace-BlueMarble-Userscripts-kr/actions/workflows/pages/pages-build-deployment/badge.svg?branch=wiki"></a>
+<a href="" target="_blank" rel="noopener noreferrer"><img alt="CodeQL" src="https://github.com/sungsoos/Wplace-BlueMarble-Userscripts-kr/actions/workflows/github-code-scanning/codeql/badge.svg"></a>
 <a href="https://www.bestpractices.dev/projects/11067" target="_blank" rel="noopener noreferrer"><img alt="OpenSSF Best Practices" src="https://www.bestpractices.dev/projects/11067/badge"></a>
 
-<h2>Regarding this fork</h2>
+<h2>이 포크에 대하여</h2>
 <p>
   <p>
-    For users who do not want to purchase the TamperMonkey App from the App Store, which is a paid app unlike other browser platforms, the Userscripts app seems to be a free alternative as a userscript manager.
+    다른 브라우저 플랫폼과 달리 앱스토어에서 유료 앱인 TamperMonkey 앱을 구매하고 
+    싶지 않은 분들은, Userscripts 앱이 괜찮은 유저스크립트 관리자가 될 수 있습니다.
   </p>
   <p>
-    However, the supported GM API by Userscripts is much smaller than what TamperMonkey supports, especially for old synchronous APIs that Blue Marble uses that have been dropped by Greasemonkey in Greasemonkey 4.0+ that has to be replaced by alternatives:
+    그러나 Userscripts가 지원하는 GM API는 Tampermonkey가 지원하는 범위보다 훨씬 적습니다. 
+    특히 블루 마블이 사용하는 기존 동기 API들은 Greasemonkey 4.0 이상 버전에서 삭제되어 다른 대안으로 교체되어야 합니다.
   </p>
 
   <ul>
     <li>GM_addStyle → GM.addStyle</li>
     <li>GM_getValue → GM.getValue</li>
-    <li>GM_getResourceText → Replaced (GM.getResourceText does not exist)</li>
+    <li>GM_getResourceText → 바뀜 (GM.getResourceText가 더이상 없음)</li>
   </ul>
 
-  <p>
-    Check the <a href="https://github.com/t-wy/Wplace-BlueMarble-Userscripts/tree/custom-improve">Custom-Improve Branch</a> for extra implemented features and improvements that are not yet in the original repository: 
-  </p>
-
-  <ul>
-    <li>Show Charges Count outside the Button that may be covered by Cloudflare Turnstile. (v0.85.3)</li>
-    <li>Show Remaining Time to Full Charges. (v0.85.9)</li>
-    <li>Allow selecting different mode to display the template
-      <ul>
-        <li>Display the palette hints as crosshair instead of a dot for better visibility by default. (v0.85.2)</li>
-        <li>(Due to Mobile Safari's Canvas size limitation (4096x4096), the maximum zooming can only be 4 instead of 5)</li>
-        <li>Allow restoring back to 3x3 dot mode (v0.85.46)</li>
-        <li>Added 3x3 alternate mode (Inspired by: <a href="https://github.com/Nooko331/Wplace-MyBetterBlueMarble">@Nooko331's idea</a>) (v0.87.5)</li>
-      </ul>
-    </li>
-    <li>Remember the loaded tiles to prevent lag / redundant computations (whenever the Last-Modified header is unchanged) (v0.85.4)</li>
-    <li>Fixed the non-persistent palette toggle bug. (v0.85.1)</li>
-    <li>Fixed the bug that the count of total blocks to count being 1 or 2 after refresh. (v0.85.2)</li>
-    <li>Fixed the bug that the "Enable All" and "Disable All" buttons do not persist. (v0.85.13)</li>
-    <li>Fixed the color space conversion issue on Firefox. (v0.85.16)</li>
-    <li>Show the filled count of each color. (v0.85.10)</li>
-    <li>Directly teleport to one of the unfilled pixel when clicking on an unfinished color block in the filter. (v0.85.10)</li>
-    <li>Allow teleporting to the given tile coordinates via the plane button next to the input boxes. (v0.85.9)</li>
-    <li>Show also geographical coordinates besides tile coordinates. (v0.85.5)</li>
-    <li>Optimize the for-loop for faster response. (v0.85.7)</li>
-    <li>Allow multiple templates to be used at the same time. (v0.85.11)</li>
-    <li>A button to teleport to the top-left corner of the selected template. (v0.85.12)</li>
-    <li>Option to hide locked colors (colors that are not unlocked) from the color list. (v0.85.17)
-      <ul>
-        <li>This option is hidden if all colors have been unlocked as per <a href="https://github.com/t-wy/Wplace-BlueMarble-Userscripts/pull/14">PR #14</a> (<a href="https://github.com/Commenter25">@Commenter25</a>). (v0.87.1)</li>
-      </ul>
-    </li>
-    <li>Provide the bookmarklet version. (v0.85.22)</li>
-    <li>Allow completed colors to be hidden from the color list. (v0.85.23)</li>
-    <li>Different options to change the display order of the colors, including (un)painted count, hue, and luminance. (v0.85.23)
-      <ul>
-        <li>Added the option to sort by Color ID. (v0.87.16)</li>
-      </ul>
-    </li>
-    <li>Progress bar behind each color in the list that shows the relative progress (v0.85.24)</li>
-    <li>Allow different coordinate formats (`a, b, c, d`, `a b c d`, and `Tl X: a, Tl Y: b, Px X: c, Px Y: d`) to be pasted to the first coordinate textbox. (v0.85.28)</li>
-    <li>Allow downloading artworks (in exact size) from the map via the Share Button by two coordinates of opposite corners (One from the textboxes, another from the pixel you pick from the map before clicking the "Share" button) (v0.85.28)</li>
-    <li>Memory-saving Mode: Create ImageBitmap only when the templates are processed, and release them immediately afterwards to prevent using up all available memory. (v0.85.33)</li>
-    <li>Allow setting the anchor for the coordinates specified for the template to be placed. (By default the coordinates are the top-left corner of the template) (v0.85.34)</li>
-    <li>Support displaying the locations of Event Items. (Need to provide a JSON data provider (e.g. <a href="https://wplace.samuelscheit.com/tiles/pumpkin.json">Wplace Archive pumpkin.json</a>) for this feature to work) (v0.85.35)</li>
-    <li>Allow only show the pixels of the currently selected color in Wplace automatically. (v0.85.37)</li>
-    <li>Try to refresh the tiles when selected colors / templates changes as soon as possible. (v0.85.38)</li>
-    <li>Try to refresh the tiles after pixel submission as soon as possible. (v0.85.39)</li>
-    <li>Switching between Wplace's builtin themes. (v0.85.40)</li>
-    <li>Testing the error map feature (Red: Wrong, Gray: Unfilled, Green: Correct). (v0.85.46)
-      <ul>
-        <li>Allow only to show enabled colors on the error map as per <a href="https://github.com/t-wy/Wplace-BlueMarble-Userscripts/issues/11">Issue #11</a> (<a href="https://github.com/ajbjc">@ajbjc</a>). (v0.86.14)</li>
-        <li>Make use of the opacity toggle to increase the contrast between the error map and the disabled colors.</li>
-      </ul>
-    </li>
-    <li>Separate the overlay and error layer from the artwork layer. (v0.86.1)</li>
-    <li>Overlay no longer wait for fetch to update. (v0.86.1)</li>
-    <li>Allow templates to be renamed by clicking on the template name. (v0.86.1)</li>
-    <li>
-    Allow smooth diagonal map scrolling via keyboard using arrow keys (<kbd>W</kbd> <kbd>A</kbd> <kbd>S</kbd> <kbd>D</kbd>). (v0.86.5)
-      <ul>
-        <li>Implemented by <a href="https://github.com/due2e">@due2e</a> as per <a href="https://github.com/t-wy/Wplace-BlueMarble-Userscripts/pull/7">PR #7</a>.</li>
-        <li>Notice that wplace has its default key bindings for axis-aligned panning via <kbd>↑</kbd> <kbd>←</kbd> <kbd>↓</kbd> <kbd>→</kbd> (and rotation / tilt with <kbd>Shift</kbd> key combined)</li>
-      </ul>
-    </li>
-    <li>Show suspension countdown and reason if it exists. (v0.86.6)</li>
-    <li>Display extra zoom ratio Buttons to allow screenshots to have exactly the same pixel size for each painted pixel, or the minimum zoom possible before the artwork disappears (Addresses <a href="https://github.com/t-wy/Wplace-BlueMarble-Userscripts/issues/8">#8</a>). (v0.86.10)
-      <ul>
-        <li>Extended by <a href="https://github.com/Commenter25">@Commenter25</a> as per <a href="https://github.com/t-wy/Wplace-BlueMarble-Userscripts/pull/13">PR #13</a>. (v0.86.15)</li>
-      </ul>
-    </li>
-    <li>Allow creating a line / circle template of the currently selected color by picking two coordinates of opposite corners (One from the textboxes, another from the pixel you pick from the map before clicking the "Share" button) (v0.86.13)
-      <ul>
-        <li>For circles, the textbox coordinates refer to the center, and the currently selected point refers to a point on the circle that defines the radius. (v0.86.16)</li>
-      </ul>
-    </li>
-    <li>Add an option to allow only currently enabled colors to be included in the error map. (Addresses <a href="https://github.com/t-wy/Wplace-BlueMarble-Userscripts/issues/11">#11</a>). (v0.86.14)</li>
-    <li>Fix some boundaries issues from Blue Marble upstream and Wplace. (v0.86.16)
-      <ul>
-        <li>Blue Marble: Template creation that crosses the Tl X: 2047 - 0 boundary not displaying from Tile X = 0.</li>
-        <li>Blue Marble: The (Tl X, Tl Y, Px X, Px Y) not updating when picking a pixel from Tile X = 2047 while the Map Center is at Tile X = 0.</li>
-        <li>Blue Marble & Wplace: The Pin button copies the faulty (Tl X, Tl Y, Px X, Px Y) from the pixel info request (i.e. Tl X and Px X being negative) when picking a pixel from Tile X = 2047 while the Map Center is at Tile X = 0.</li>
-        <li>Wplace: Pixel Info not displaying when picking a pixel from Tile X = 0 when the Map Center is at Tile X = 2047.</li>
-      </ul>
-    </li>
-    <li>Allow templates not to create overlays on map to save processing time. Useful when used together with official overlay feature or other overlay tools. (v0.87.15)
-      <ul>
-        <li>Notice that in this case, the colors displayed on the overlay are managed by the exteral overlay tool, not this script.</li>
-      </ul>
-    </li>
-  </ul>
+  ... 번역이 되지 않은 변경사항을 보시려면 [여기를](https://github.com/sungsoos/Wplace-BlueMarble-Userscripts-kr#regarding-this-fork) 클릭해 주세요
 </p>
 
-<h2>Quick Guide</h2>
+<h2>빠른 가이드</h2>
 <p>
-  Press the arrows to reveal the option you want.
+  원하는 항목을 클릭하세요.
   <details>
     <summary>
-      <b>I want to download Blue Marble.</b> <sup>(Click to Expand)</sup>
+      <b>블루 마블을 다운로드하고 싶어요.</b> <sup>(눌러서 펼치기)</sup>
     </summary>
-    <a href="#installation-instructions">Click here</a> to view the installation instructions.
+    <a href="#설치-가이드">여기를 눌러</a> 설치 방법을 보세요.
   </details>
   <details>
     <summary>
-      <b>I want to ask questions about Blue Marble.</b> <sup>(Click to Expand)</sup>
+      <b>블루 마블에 대한 질문을 하고 싶어요.</b> <sup>(눌러서 펼치기)</sup>
     </summary>
-    <a href="https://discord.gg/tpeBPy46hf" target="_blank" rel="noopener noreferrer">Click here</a> for the Discord server invite to the Blue Marble support server.
+    <a href="https://discord.gg/tpeBPy46hf" target="_blank" rel="noopener noreferrer">여기를 눌러</a> 블루 마블 지원 디스코드 서버 초대를 받으세요. (영어를 써주세요)
     <br>
-    <a href="https://github.com/t-wy/Wplace-BlueMarble-Userscripts/discussions/categories/q-a">Click here</a> for the GitHub help & question page for Blue Marble.
+    <a href="https://github.com/sungsoos/Wplace-BlueMarble-Userscripts-kr/discussions/categories/q-a">여기를 눌러</a> 도움 및 질문 페이지를 여세요. (여전히 영어에요)
   </details>
   <details>
     <summary>
-      <b>I want to report a bug.</b> <sup>(Click to Expand)</sup>
+      <b>오류를 신고하고 싶어요.</b> <sup>(눌러서 펼치기)</sup>
     </summary>
-    <a href="https://github.com/t-wy/Wplace-BlueMarble-Userscripts/issues/new/choose">Click here</a> to report a bug, then choose the "Bug Report" option.
+    <a href="https://github.com/sungsoos/Wplace-BlueMarble-Userscripts-kr/issues/new/choose">여기를 눌러</a> 이슈 만들기 창을 열고, "Bug Report"를 선택하세요. (영어를 써주세요)
   </details>
   <details>
     <summary>
-      <b>I want to suggest a feature.</b> <sup>(Click to Expand)</sup>
+      <b>기능을 제안하고 싶어요.</b> <sup>(눌러서 펼치기)</sup>
     </summary>
-    <a href="https://github.com/t-wy/Wplace-BlueMarble-Userscripts/issues/new/choose">Click here</a> to suggest a feature, then choose the Feature Request" option.
+    <a href="https://github.com/sungsoos/Wplace-BlueMarble-Userscripts-kr/issues/new/choose">여기를 눌러</a> 이슈 만들기 창을 열고, "Feature Request"를 선택하세요. (영어를 써주세요)
   </details>
   <details>
     <summary>
-      <b>I want to contribute.</b> <sup>(Click to Expand)</sup>
+      <b>이 프로젝트에 기여하고 싶어요.</b> <sup>(눌러서 펼치기)</sup>
     </summary>
-    <a href="https://github.com/t-wy/Wplace-BlueMarble-Userscripts/blob/main/docs/CONTRIBUTING.md">Click here</a> to read the contributing guidelines.
+    <a href="https://github.com/sungsoos/Wplace-BlueMarble-Userscripts-kr/blob/main/docs/CONTRIBUTING.md">여기를 눌러</a> 기여 가이드를 읽으세요.
   </details>
   <details>
     <summary>
-      <b>I want to report a vulnerability.</b> <sup>(Click to Expand)</sup>
+      <b>취약점을 신고하고 싶어요.</b> <sup>(눌러서 펼치기)</sup>
     </summary>
-    <a href="https://github.com/t-wy/Wplace-BlueMarble-Userscripts/security">Click here</a> to submit a vulnerability report.
+    <a href="https://github.com/sungsoos/Wplace-BlueMarble-Userscripts-kr/security">여기를 눌러</a> 취약점 신고를 해주세요. (영어를 써주세요)
   </details>
   <details>
     <summary>
-      <b>I want to visit the website.</b> <sup>(Click to Expand)</sup>
+      <b>웹사이트를 방문하고 싶어요.</b> <sup>(눌러서 펼치기)</sup>
     </summary>
-    <a href="https://bluemarble.lol/" target="_blank" rel="noopener noreferrer">Click here</a> to visit the official Blue Marble website.
+    <a href="https://bluemarble.lol/" target="_blank" rel="noopener noreferrer">여기를 눌러</a> 공식 블루 마블 사이트를 방문하세요. (영어에요)
   </details>
 </p>
 
-<h2>Overview</h2>
+<h2>개요</h2>
 <p>
-  Welcome to Blue Marble! Blue Marble is a userscript for the website <a href="https://wplace.live/" target="_blank" rel="noopener noreferrer">wplace.live</a>. The purpose of Blue Marble is to allow you to take an image, and layer it onto the canvas! That way, you can easily trace the image of your art, without having to look back and forth between multiple tabs/monitors. In addition, Blue Marble supports some neat extra features such as: 
+  블루 마블에 오신 것을 환영합니다! 블루 마블은 <a href="https://wplace.live/" target="_blank" rel="noopener noreferrer">wplace.live</a>를 위한 유저스크립트입니다. 블루 마블의 용도는 이미지를 만들고, 캔버스에 씌우기 위해서입니다! 그러면, 당신의 그림을 여러 탭/모니터를 번갈아 보지 않고 확인할 수 있습니다. 추가로, 블루 마블은 멋진 추가 기능을 지원합니다. 예시를 들어:  
   <ul>
-    <li>Displaying the number of pixels you need to level up</li>
-    <li>Displaying a simple coordinate system (tile coordinats & pixel coordinates)</li>
-    <li>Allowing you to move the color palette to the top of the screen when placing pixels</li>
-    <li>Allowing you to use the eyedropper on the template image, provided the colors are correct</li>
-    <li>...and more!</li>
+    <li>레벨업을 하는데 필요한 픽셀 수 표시</li>
+    <li>간단한 좌표 시스템 표시 (타일 위치 및 픽셀 위치)</li>
+    <li>픽셀을 배치할 때, 색상 팔레트를 위로 옮기기</li>
+    <li>템플릿 사진에 색상 선택기를 사용하여 올바른 색상 사용하기</li>
+    <li>...그리고 더!</li>
   </ul>
-  If you like this userscript, please ⭐ the repository! For more information and updates, visit the <a href="https://bluemarble.lol/" target="_blank" rel="noopener noreferrer">Blue Marble website</a>. If you wish to contribute to Blue Marble, check out the <a href="https://github.com/t-wy/Wplace-BlueMarble-Userscripts/blob/main/docs/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer">CONTRIBUTING.md</a> file in <code>docs/</code>.
+  이 유저스크립트가 좋다면, 리포지토리에 ⭐을 남겨주세요! 더 많은 정보를 원하면, <a href="https://bluemarble.lol/" target="_blank" rel="noopener noreferrer">블루 마블 웹사이트</a>를 방문하세요. 블루 마블에 기여하고 싶으면, <code>docs/</code>에 있는 <a href="https://github.com/sungsoos/Wplace-BlueMarble-Userscripts-kr/blob/main/docs/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer">CONTRIBUTING.md</a>를 확인해 주세요.
 
-  <img alt="Showcase image of Blue Marble template" src="./assets/Showcase1.png">
+  <img alt="블루 마블 템플릿의 미리보기 이미지" src="./assets/Showcase1.png">
 
-  <h3>Installation Instructions</h3>
-  <a href="" target="_blank" rel="noopener noreferrer"><img alt="Supported Browsers" src="https://img.shields.io/badge/Supported%20Browsers-Chrome%20%7C%20Firefox%2A%20%7C%20Safari%20%7C%20Edge%20%7C%20Brave-orange?style=flat"></a>
-  <a href="" target="_blank" rel="noopener noreferrer"><img alt="Unupported Browsers" src="https://img.shields.io/badge/Unsupported%20Browsers-Firefox%2A%20%7C%20Kiwi%20%7C%20Vivaldi-red?style=flat"></a>
+  <h3>설치 가이드</h3>
+  <a href="" target="_blank" rel="noopener noreferrer"><img alt="지원되는 브라우저" src="https://img.shields.io/badge/%EC%A7%80%EC%9B%90%EB%90%98%EB%8A%94%20%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80-%ED%81%AC%EB%A1%AC%20%7C%20%ED%8C%8C%EC%9D%B4%EC%96%B4%ED%8F%AD%EC%8A%A4*%20%7C%20%EC%82%AC%ED%8C%8C%EB%A6%AC%20%7C%20%EC%97%A3%EC%A7%80%20%7C%20%EB%B8%8C%EB%A0%88%EC%9D%B4%EB%B8%8C-orange?style=flat"></a>
+  <a href="" target="_blank" rel="noopener noreferrer"><img alt="지원되지 않는 브라우저" src="https://img.shields.io/badge/%EC%A7%80%EC%9B%90%EB%90%98%EC%A7%80%20%EC%95%8A%EB%8A%94%20%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80-%ED%8C%8C%EC%9D%B4%EC%96%B4%ED%8F%AD%EC%8A%A4*%20%7C%20%ED%82%A4%EC%9C%84%20%7C%20%EB%B9%84%EB%B0%9C%EB%94%94-red?style=flat"></a>
   <p>
-    Blue Marble has been verified to work on mobile devices. Blue Marble was designed on Chrome, but Blue Marble might work on "unsupported" browsers not listed above. Some versions/forks of Firefox work. Some versions/forks of Firefox do not work.
+    블루 마블은 모바일 기기에서 작동합니다. 블루 마블은 크롬을 위해 제작되었지만, 
+    위에 없는 "지원되지 않는" 브라우저에서도 작동할 수 있습니다. 특정 파이어폭스 버전/포크에서 작동합니다. 특정 파이어폭스 버전/포크에서는 작동하지 않습니다.
     <br>
-    Installation instructions for Blue Marble are below. Click the arrows to expand the instructions you want to see. Blue text is a link.
+    블루 마블 설치 가이드는 아래에 적혀 있습니다. 화살표를 눌러 가이드를 확장하세요. 파란 글씨는 링크입니다.
     <details>
       <summary>
-        <b>Install Chrome</b> <sup>(Click to expand)</sup>
+        <b>크롬에 설치</b> <sup>(눌러서 펼치기)</sup>
       </summary>
-      <a href="https://www.youtube.com/watch?v=gg5oiJcftEc" target="_blank" rel="noopener noreferrer"><img alt="Install Tutorial" src="https://img.shields.io/badge/Install_Tutorial-gray?style=flat&logo=YouTube&logoColor=white&logoSize=auto&labelColor=darkred"></a>
+      <a href="https://www.youtube.com/watch?v=gg5oiJcftEc" target="_blank" rel="noopener noreferrer"><img alt="설치 튜토리얼" src="https://img.shields.io/badge/%EC%84%A4%EC%B9%98%20%ED%8A%9C%ED%86%A0%EB%A6%AC%EC%96%BC%20(%EC%98%81%EC%96%B4)-gray?style=flat&logo=YouTube&logoColor=white&logoSize=auto&labelColor=darkred"></a>
       <ol>
-        <li>Install the <a href="https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo" target="_blank" rel="noopener noreferrer">TamperMonkey</a> extension for Chrome.
+        <li>Chrome용 <a href="https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo" target="_blank" rel="noopener noreferrer">TamperMonkey</a> 확장 프로그램을 설치하세요.
         <br>
-        <img alt="Click the 'Add extension' button" src="https://github.com/t-wy/Wplace-BlueMarble-Userscripts/blob/main/docs/assets/ComputerChromeInstall1.png"></li>
-        <li>Right-click the extension.
+        <img alt="'확장 프로그램 추가' 버튼을 클릭하세요" src="https://github.com/sungsoos/Wplace-BlueMarble-Userscripts-kr/blob/main/docs/assets/ComputerChromeInstall1.png"></li>
+        <li>확장 프로그램을 마우스 오른쪽 버튼으로 클릭하세요.
         <br>
-        <img alt="Enter the 'Manage Extension' menu" src="https://github.com/t-wy/Wplace-BlueMarble-Userscripts/blob/main/docs/assets/ComputerChromeInstall2.png"></li>
-        <li>Left-click "Manage Extension."</li>
-        <li>Enable "Developer Mode."
+        <img alt="'확장 프로그램 관리' 메뉴로 들어가세요" src="https://github.com/sungsoos/Wplace-BlueMarble-Userscripts-kr/blob/main/docs/assets/ComputerChromeInstall2.png"></li>
+        <li>'확장 프로그램 관리'를 마우스 왼쪽 버튼으로 클릭하세요.</li>
+        <li>'개발자 모드'를 활성화하세요.
         <br>
-        <img alt="Enable 'Developer Mode' and 'Allow user scripts'" src="https://github.com/t-wy/Wplace-BlueMarble-Userscripts/blob/main/docs/assets/ComputerChromeInstall3.png"></li>
-        <li>Enable "Allow user scripts."</li>
-        <li><strong>One-click install:</strong> Click this link to Install Blue Marble directly: <a href="https://raw.githubusercontent.com/t-wy/Wplace-BlueMarble-Userscripts/custom-improve/dist/BlueMarble.user.js" target="_blank" rel="noopener noreferrer"><strong>Install Blue Marble</strong></a>
+        <img alt="'개발자 모드'와 '사용자 스크립트 허용'을 활성화하세요" src="https://github.com/sungsoos/Wplace-BlueMarble-Userscripts-kr/blob/main/docs/assets/ComputerChromeInstall3.png"></li>
+        <li>'사용자 스크립트 허용'을 활성화하세요.</li>
+        <li><strong>원클릭 설치:</strong> 이 링크를 눌러 블루 마블을 바로 설치하세요: <a href="https://raw.githubusercontent.com/sungsoos/Wplace-BlueMarble-Userscripts-kr/custom-improve/dist/BlueMarble.user.js" target="_blank" rel="noopener noreferrer"><strong>블루 마블 설치</strong></a>
         <br>
-        TamperMonkey will automatically detect the userscript and prompt you to Install it.</li>
-        <li>Refresh the <a href="https://wplace.live/" target="_blank" rel="noopener noreferrer">wplace.live</a> webpage.</li>
+        TamperMonkey가 유저스크립트를 자동으로 감지하고 설치 여부를 묻습니다.</li>
+        <li><a href="https://wplace.live/" target="_blank" rel="noopener noreferrer">wplace.live</a> 웹페이지를 새로고침하세요.</li>
       </ol>
     </details>
     <details>
       <summary>
-        <b>Install on Microsoft Edge</b> <sup>(Click to expand)</sup>
+        <b>Microsoft Edge에 설치</b> <sup>(눌러서 펼치기)</sup>
       </summary>
       <ol>
-        <li>Install the <a href="https://microsoftedge.microsoft.com/addons/detail/iikmkjmpaadaobahmlepeloendndfphd" target="_blank" rel="noopener noreferrer">TamperMonkey</a> plugin for Microsoft Edge.
+        <li>Microsoft Edge용 <a href="https://microsoftedge.microsoft.com/addons/detail/iikmkjmpaadaobahmlepeloendndfphd" target="_blank" rel="noopener noreferrer">TamperMonkey</a> 플러그인을 설치하세요.
         <br>
-        <img alt="Click the 'Get' button" src="https://github.com/t-wy/Wplace-BlueMarble-Userscripts/blob/main/docs/assets/ComputerEdgeInstall1.png"></li>
-        <li>Right-click the extension.
+        <img alt="'받기' 버튼을 클릭하세요" src="https://github.com/sungsoos/Wplace-BlueMarble-Userscripts-kr/blob/main/docs/assets/ComputerEdgeInstall1.png"></li>
+        <li>확장 프로그램을 마우스 오른쪽 버튼으로 클릭하세요.
         <br>
-        <img alt="Enter the 'Manage Extension' menu" src="https://github.com/t-wy/Wplace-BlueMarble-Userscripts/blob/main/docs/assets/ComputerEdgeInstall2.png"></li>
-        <li>Left-click "Manage Extension."</li>
-        <li>Enable "Developer Mode."
+        <img alt="'확장 프로그램 관리' 메뉴로 들어가세요" src="https://github.com/sungsoos/Wplace-BlueMarble-Userscripts-kr/blob/main/docs/assets/ComputerEdgeInstall2.png"></li>
+        <li>'확장 프로그램 관리'를 마우스 왼쪽 버튼으로 클릭하세요.</li>
+        <li>'개발자 모드'를 활성화하세요.
         <br>
-        <img alt="Enable 'Developer Mode'" src="https://github.com/t-wy/Wplace-BlueMarble-Userscripts/blob/main/docs/assets/ComputerEdgeInstall3.png"></li>
-        <li>Download the <a href="https://raw.githubusercontent.com/t-wy/Wplace-BlueMarble-Userscripts/custom-improve/dist/BlueMarble.user.js" target="_blank" rel="noopener noreferrer">BlueMarble.user.js</a> file.</li>
-        <li>Open the TamperMonkey Dashboard.
+        <img alt="'개발자 모드'를 활성화하세요" src="https://github.com/sungsoos/Wplace-BlueMarble-Userscripts-kr/blob/main/docs/assets/ComputerEdgeInstall3.png"></li>
+        <li><a href="https://raw.githubusercontent.com/sungsoos/Wplace-BlueMarble-Userscripts-kr/custom-improve/dist/BlueMarble.user.js" target="_blank" rel="noopener noreferrer">BlueMarble.user.js</a> 파일을 다운로드하세요.</li>
+        <li>TamperMonkey 대시보드를 여세요.
         <br>
-        <img alt="Enter the TamperMonkey 'Dashboard'" src="https://github.com/t-wy/Wplace-BlueMarble-Userscripts/blob/main/docs/assets/ComputerEdgeInstall4.png"></li>
-        <li>Drag the <code>BlueMarble.user.js</code> file inside the dashboard of TamperMonkey.
+        <img alt="TamperMonkey '대시보드'로 들어가세요" src="https://github.com/sungsoos/Wplace-BlueMarble-Userscripts-kr/blob/main/docs/assets/ComputerEdgeInstall4.png"></li>
+        <li><code>BlueMarble.user.js</code> 파일을 TamperMonkey 대시보드 안으로 끌어다 놓으세요.
         <br>
-        <img alt="Drag the userscript into the dashboard" src="https://github.com/t-wy/Wplace-BlueMarble-Userscripts/blob/main/docs/assets/ComputerChromeInstall5.png"></li>
-        <li>Click the "Install" button to Install Blue Marble.
+        <img alt="유저스크립트를 대시보드 안으로 끌어다 놓으세요" src="https://github.com/sungsoos/Wplace-BlueMarble-Userscripts-kr/blob/main/docs/assets/ComputerChromeInstall5.png"></li>
+        <li>'설치' 버튼을 클릭하여 블루 마블을 설치하세요.
         <br>
-        <img alt="Click the 'Install' button" src="https://github.com/t-wy/Wplace-BlueMarble-Userscripts/blob/main/docs/assets/ComputerChromeInstall6.png"></li>
-        <li>Enable Blue Marble inside the TamperMonkey dashboard.
+        <img alt="'설치' 버튼을 클릭하세요" src="https://github.com/sungsoos/Wplace-BlueMarble-Userscripts-kr/blob/main/docs/assets/ComputerChromeInstall6.png"></li>
+        <li>TamperMonkey 대시보드에서 블루 마블을 활성화하세요.
         <br>
-        <img alt="Enable Blue Marble" src="https://github.com/t-wy/Wplace-BlueMarble-Userscripts/blob/main/docs/assets/ComputerChromeInstall7.png"></li>
-        <li>Refresh the <a href="https://wplace.live/" target="_blank" rel="noopener noreferrer">wplace.live</a> webpage.</li>
+        <img alt="블루 마블을 활성화하세요" src="https://github.com/sungsoos/Wplace-BlueMarble-Userscripts-kr/blob/main/docs/assets/ComputerChromeInstall7.png"></li>
+        <li><a href="https://wplace.live/" target="_blank" rel="noopener noreferrer">wplace.live</a> 웹페이지를 새로고침하세요.</li>
       </ol>
     </details>
     <details>
       <summary>
-        <b>Install on Firefox</b> <sup>(Click to expand)</sup>
+        <b>파이어폭스에 설치하기</b> <sup>(눌러서 펼치기)</sup>
       </summary>
       <ol>
-        <li>Install the <a href="https://addons.mozilla.org/en-US/firefox/addon/tampermonkey/" target="_blank" rel="noopener noreferrer">TamperMonkey</a> plugin for Firefox.
+        <li><a href="https://addons.mozilla.org/en-US/firefox/addon/tampermonkey/" target="_blank" rel="noopener noreferrer">TamperMonkey</a> 플러그인을 설치하세요.
         <br>
-        <img alt="Click the 'Add to Firefox' button" src="https://github.com/t-wy/Wplace-BlueMarble-Userscripts/blob/main/docs/assets/ComputerFireFoxInstall1.png"></li>
-        <li><strong>One-click install:</strong> Click this link to Install Blue Marble directly: <a href="https://raw.githubusercontent.com/t-wy/Wplace-BlueMarble-Userscripts/custom-improve/dist/BlueMarble.user.js" target="_blank" rel="noopener noreferrer"><strong>Install Blue Marble</strong></a>
+        <img alt="'파이어폭스에 추가' 버튼을 클릭하세요" src="https://github.com/sungsoos/Wplace-BlueMarble-Userscripts-kr/blob/main/docs/assets/ComputerFireFoxInstall1.png"></li>
+        <li><strong>원클릭 설치:</strong> 이 링크를 눌러 블루 마블을 설치하세요: <a href="https://raw.githubusercontent.com/sungsoos/Wplace-BlueMarble-Userscripts-kr/custom-improve/dist/BlueMarble.user.js" target="_blank" rel="noopener noreferrer"><strong>블루 마블 설치</strong></a>
         <br>
-        TamperMonkey will automatically detect the userscript and prompt you to install it.</li>
-        <li>Refresh the <a href="https://wplace.live/" target="_blank" rel="noopener noreferrer">wplace.live</a> webpage.</li>
+        TamperMonkey가 유저스크립트를 자동으로 감지하고 설치 여부를 묻습니다.</li>
+        <li><a href="https://wplace.live/" target="_blank" rel="noopener noreferrer">wplace.live</a> 웹페이지를 새로고침하세요.</li>
       </ol>
     </details>
     <details>
       <summary>
-        <b>Install on Safari using Userscripts instead of TamperMonkey</sup>
+        <b>TamperMonkey 대신 사파리에 Userscripts 사용하기</sup>
       </summary>
       <ol>
-        <li>Install the <a href="https://apps.apple.com/us/app/userscripts/id1463298887" target="_blank" rel="noopener noreferrer">Userscripts</a> App from App Store.
+        <li>앱 스토어에서 <a href="https://apps.apple.com/us/app/userscripts/id1463298887" target="_blank" rel="noopener noreferrer">Userscripts</a> 앱을 설치하세요.
         <br>
-        Make sure that appropriate permissions have been given to the App and Safari is configured to enable the extension.</li>
+        블루 마블을 위한 권한이 사파리와 앱에 부여되었는지 확인하세요.</li>
         <br>
-        <li>Download the Blue Marble script and save to the Save Location as specified by the App: <a href="https://raw.githubusercontent.com/t-wy/Wplace-BlueMarble-Userscripts/custom-improve/dist/BlueMarble.user.js" target="_blank" rel="noopener noreferrer"><strong>Download Blue Marble</strong></a>
+        <li>블루 마블 스크립트를 Userscripts에서 설정한 위치에 저장하세요: <a href="https://raw.githubusercontent.com/sungsoos/Wplace-BlueMarble-Userscripts-kr/custom-improve/dist/BlueMarble.user.js" target="_blank" rel="noopener noreferrer"><strong>블루 마블 다운로드</strong></a>
         <br>
-        Userscripts will automatically detect the userscript.</li>
-        <li>Refresh the <a href="https://wplace.live/" target="_blank" rel="noopener noreferrer">wplace.live</a> webpage.</li>
-        <li>Problems regarding the Installation and Usages of Userscripts should refer to: <a href="https://github.com/quoid/userscripts/" target="_blank" rel="noopener noreferrer"><strong>Userscripts's Repository</strong></a> Instead.
+        Userscripts가 자동으로 유저스크립트를 감지할 것입니다.</li>
+        <li><a href="https://wplace.live/" target="_blank" rel="noopener noreferrer">wplace.live</a> 웹페이지를 새로고짐 하세요.</li>
+        <li>Userscripts에 대한 문제점과 사용 방법은 <a href="https://github.com/quoid/userscripts/" target="_blank" rel="noopener noreferrer"><strong>Userscripts 리포지토리</strong></a>에서 보셔야 합니다.
       </ol>
     </details>
   </p>
 
-  <h3>Template Instructions</h3>
+  <h3>템플릿 가이드</h3>
   <p>
-    Blue Marble will display your template as the same size. If your image is 500 pixels tall and 300 pixels wide, the template will be 500 pixels tall and 300 pixels wide. Here is the instructions to display a template image on the canvas:
+    블루 마블은 당신의 템플릿을 같은 크기로 표시할 것입니다. 만약 당신의 사진이 500x300이라면, 템플릿도 500x300이 될 것입니다. 여기는 템플릿 사진을 캔버스에 표시하기 위한 가이드입니다: 
     <ol>
-      <li>Find the pixel of the top left corner. Fill in <code>Tl X</code>, <code>Tl Y</code>, <code>Px X</code>, and <code>Px Y</code> with the coordinates. You can use the "Pin" icon to auto-fill the coordinates after clicking the pixel.
+      <li>왼쪽 위 코너의 좌표를 찾습니다. <code>타일 X</code>, <code>타일 Y</code>, <code>픽셀 X</code>, and <code>픽셀 Y</code> 를 좌표로 채웁니다. "핀" 아이콘을 눌러 좌표를 자동으로 채울 수 있습니다.
       <br>
-      <img alt="Find template coordinates" src="https://github.com/t-wy/Wplace-BlueMarble-Userscripts/blob/main/docs/assets/TemplateCoordinates1.png"></li>
-      <li>Upload a PNG or WEBP image.</li>
-      <li>Click the "Create" button.</li>
-      <li>If your template still does not show, try clicking the "Enable" button.</li>
+      <img alt="템플릿 좌표 찾기" src="https://github.com/sungsoos/Wplace-BlueMarble-Userscripts-kr/blob/main/docs/assets/TemplateCoordinates1.png"></li>
+      <li>PNG 혹은 WEBP 사진을 업로드 합니다.</li>
+      <li>"만들기" 버튼을 누릅니다.</li>
+      <li>템플릿이 보이지 않다면, "활성화" 버튼을 눌러보세요.</li>
     </ol>
   </p>
 
-  <h3>Script Settings</h3>
+  <h3>스크립트 설정</h3>
   <p>
-    There are many settings available for the Blue Marble userscript! Through these settings, you can control how the script behaves.
+    블루 마블 유저스크립트에는 많은 설정이 있습니다! 이 설정들로, 스크립트가 어떻게 동작하는지 바꿀 수 있습니다.
   </p>
 
-  <h3>Template Settings</h3>
+  <h3>템플릿 설정</h3>
   <p>
-    <h4>Transparent Pixels</h4>
+    <h4>투명 픽셀</h4>
     <p>
-      Templates for Blue Marble work slightly different from normal. Since there is a "Transparent" color, and transparent pixels in templates are typically ignored, your template should have a custom color to signify "Transparent" colored pixels.
+      블루 마블을 위한 템플릿은 약간 다르게 동작합니다. "투명" 색상이 있고, 템플릿에서 투명 픽셀은 일반적으로 무시되므로, 당신의 템플릿은 "투명" 색상 픽셀을 시각화하는 색상이 필요합니다.
       <ul>
-        <li>If you want a specific pixel to be any color, it should be transparent in your template.</li>
-        <li>If you want a specific pixel to be the "Transparent" color on the Wplace palette, it should have the <code>#deface</code> hex color.</li>
+        <li>만약 특정 픽셀이 어떤 색상이 되기를 원하면, 그 픽셀은 당신의 템플릿에서 투명 색상이 되어야 합니다.</li>
+        <li>만약 어떤 픽셀이 "투명" 색상이 되기를 원하면, 그 픽셀은 당신의 템플릿에서 <code>#deface</code> 색상이 되어야 합니다.</li>
       </ul>
     </p>
-    <h4>Coordinates</h4>
+    <h4>좌표</h4>
     <p>
-      <h5>Tile Coordinates</h5>
+      <h5>타일 좌표</h5>
       <p>
-        The coordinate system for wplace.live is unique. Instead of all pixels having a global coordinate number (x, y), the coordinate number is relative to the tile. This means you need to know the tile number and the coordinate number to do anything. In Blue Marble, the tile coordinates and the pixel coordinates are displayed when you click on a pixel. These are the coordinates you should use for aligning a template.
+        wplace.live의 좌표 체계는 매우 독특합니다. 모든 픽셀이 하나의 절대적인 전체 좌표(x, y)를 갖는 대신, 좌표 숫자가 타일을 기준으로 상대적으로 지정됩니다. 따라서 어떤 작업을 수행하려면 타일 번호와 픽셀 좌표 번호를 둘 다 알아야 합니다. 블루 마블에서는 픽셀을 클릭하면 해당 타일 좌표와 픽셀 좌표가 함께 표시됩니다. 템플릿의 위치를 맞출 때는 바로 이 좌표들을 사용해야 합니다.
         <br>
-        <img alt="Where to find tile coordinates" src="https://github.com/t-wy/Wplace-BlueMarble-Userscripts/blob/main/docs/assets/TemplateCoordinatesDisplay.png">
+        <img alt="좌표를 찾는 방법" src="https://github.com/sungsoos/Wplace-BlueMarble-Userscripts-kr/blob/main/docs/assets/TemplateCoordinatesDisplay.png">
       </p>
-      <h5>Template Coordinates</h5>
+      <h5>템플릿 좌표</h5>
       <p>
-        The template is aligned from the top left corner of the template. You can auto-fill this position using the "pin" (also called "waypoint") icon next to the coordinate input boxes.
+        템플릿은 왼쪽 위로 정렬이 됩니다. 자동으로 채우려면, "핀" (혹은 "웨이포인트") 버튼을 사용할 수 있습니다.
       </p>
     </p>
   </p>
 </p>
 
-<h2>How Versioning Works</h2>
+<h2>버전 관리 방식</h2>
 <p>
-  The versioning system for this userscript follows the <a href="https://semver.org/" target="_blank" rel="noopener noreferrer">Semantic Versioning rules</a>. As such, it is formatted in an <code>X.Y.Z</code> format where:
+  이 유저스크립트의 버전 관리 시스템은 <a href="https://semver.org/" target="_blank" rel="noopener noreferrer">유의적 버전 규칙</a>을 따릅니다. 따라서 <code>X.Y.Z</code> 형식으로 구성되며 각 자리의 의미는 다음과 같습니다:
   <ul>
-    <li>X is the major version. This is incremented when a non-backward compatible update is pushed. This is for new features that break previous versions of the userscript. Additionally, if wplace.live breaks the userscript, this will be incremented.</li>
-    <li>Y is the minor version. This is incremented whenever I push to GitHub. This is for stable bug-fixes and new (non-breaking) features.</li>
-    <li>Z is the patch version. This is incremented whenever I launch a development version of the userscript to test a patch. This is for unstable bug-fixes/features.</li>
+    <li>X는 마이너/메이저 중 메이저 버전입니다. 하위 호환성이 유지되지 않는 업데이트가 반영될 때 올립니다. 이전 버전의 유저스크립트와 호환되지 않는 새로운 기능이 추가될 때 해당합니다. 또한 wplace.live의 업데이트로 인해 유저스크립트가 작동하지 않게 되는 경우에도 이 숫자가 올라갑니다.</li>
+    <li>Y는 마이너 버전입니다. GitHub에 코드를 커밋/푸시할 때마다 올립니다. 안정적인 버그 수정 및 (하위 호환성을 깨뜨리지 않는) 새로운 기능을 추가할 때 사용됩니다.</li>
+    <li>Z는 패치 버전입니다. 패치를 테스트하기 위해 개발용 버전을 배포할 때마다 올립니다. 아직 검증되지 않은 불안정한 버그 수정이나 기능 테스트용입니다.</li>
   </ul>
 </p>
 
-<h2>Licenses</h2>
+<h2>라이선스</h2>
 <p>
-  (Below, all mentions of the "userscript" refer to the "Blue Marble" userscript made by SwingTheVine) <br>
-  Most of this userscript is licensed under the <code>Mozilla Public License Version 2.0</code> (MPL-2.0). All software, code, and libraries in this repository are licensed under the MPL-2.0 license. However, the "Blue Marble" image in this userscript is owned by NASA and is licensed under the <code>Creative Commons 0 1.0 Universal</code> (CC0 1.0) license.
+  (아래에서 언급되는 "유저스크립트"는 모두 SwingTheVine이 제작한 "Blue Marble" 유저스크립트를 가리킵니다.) <br>
+  본 유저스크립트의 대부분은 <code>Mozilla Public License Version 2.0</code>(MPL-2.0)에 따라 라이선스가 부여됩니다. 이 저장소의 모든 소프트웨어, 코드 및 라이브러리는 MPL-2.0 라이선스를 따릅니다. 단, 본 유저스크립트에 사용된 "Blue Marble" 이미지는 NASA의 소유이며 <code>Creative Commons 0 1.0 Universal</code>(CC0 1.0) 라이선스가 적용됩니다.
 </p>
 
-<h2>FAQ</h2>
+<h2>자주 묻는 질문</h2>
 <p>
-  <h3>Is Blue Marble malware?</h3>
-  <p><b>A:</b> Blue Marble does not contain malicious code. The Blue Marble code can be found in the <code>src/</code> folder. If you worry about Blue Marble being malware, you can read the code, then bundle it yourself using the tools in <code>build/</code>.
+  <h3>블루 마블은 악성코드인가요?</h3>
+  <p><b>답변:</b> 블루 마블에는 악성 코드가 포함되어 있지 않습니다. 블루 마블의 코드는 <code>src/</code> 폴더에서 확인하실 수 있습니다. 악성코드가 우려되신다면 직접 코드를 검토한 뒤 <code>build/</code>에 있는 도구를 사용해 직접 빌드하여 사용하실 수 있습니다.</p>
 
-  <h3>How can Blue Marble place pixels for me?</h3>
-  <p><b>A:</b> Unfortunately, Blue Marble will not support the automatic placement of pixels without user interaction because it is not allowed by Wplace.
+  <h3>블루 마블이 알아서 픽셀을 찍어줄 수 있나요?</h3>
+  <p><b>답변:</b> 안타깝게도 Wplace 측에서 허용하지 않기 때문에, 블루 마블은 사용자 조작 없는 자동 픽셀 찍기 기능을 지원하지 않습니다.</p>
 
-  <h3>How do I hide the overlay?</h3>
-  <p><b>A:</b> Turn the userscript off and refresh the page.</p>
+  <h3>창을 어떻게 숨기나요?</h3>
+  <p><b>답변:</b> 유저스크립트를 비활성화한 후 페이지를 새로고침하세요.</p>
 
-  <h3>How do I tell colors apart?</h3>
-  <p><b>A:</b> Find the color in the color filter list. Click the checkbox to turn the color on or off. If you want to work on only one color at a time (recommended), then click "Disable All" in the color filter. Finally, enable the checkbox next to the color you want to place. This way, only one color on your template will appear at a time.</p>
+  <h3>색상은 어떻게 구별하나요?</h3>
+  <p><b>답변:</b> 색상 필터 목록에서 원하는 색상을 찾은 뒤, 체크박스를 클릭하여 해당 색상을 켜거나 끄세요. 한 번에 한 가지 색상 작업만 진행하고 싶다면(권장 방식), 색상 필터에서 "모두 비활성화"을 클릭한 다음 작업하려는 색상 옆의 체크박스만 활성화하세요. 이렇게 하면 템플릿에서 선택한 한 가지 색상만 화면에 표시됩니다.</p>
 
-  <h3>How do get the color of a pixel?</h3>
-  <p><b>A:</b> Use the eyedropper in the palette menu of wplace. If your template colors match the wplace palette, you can select the template pixel dot to get the template's color for that pixel.</p>
+  <h3>픽셀의 색상은 어떻게 알아내나요?</h3>
+  <p><b>답변:</b> wplace 팔레트 메뉴에 있는 스포이트 도구를 사용하세요. 템플릿 색상이 wplace 팔레트와 일치하는 경우, 템플릿의 픽셀 점을 선택하면 해당 픽셀의 템플릿 색상을 가져올 수 있습니다.</p>
 
-  <h3>Why do game notifications appear on top of the overlay?</h3>
-  <p><b>A:</b> Game notifications only appear when they need immediate attention. Therefore, they have priority over the overlay (which typically needs no attention).</p>
+  <h3>왜 게임 알림이 창보다 위에 표시되나요?</h3>
+  <p><b>답변:</b> 게임 알림은 즉각적인 확인이 필요할 때만 등장합니다. 따라서 창(주로 주의를 기울일 필요가 없는 요소)보다 우선순위가 높게 설정되어 있습니다.</p>
 </p>
