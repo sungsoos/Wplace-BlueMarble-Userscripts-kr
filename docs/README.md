@@ -243,7 +243,7 @@
     </details>
     <details>
       <summary>
-        <b>TamperMonkey 대신 사파리에 Userscripts 사용하기</sup>
+        <b>TamperMonkey 대신 사파리에 Userscripts 사용하기</b> <sup>(눌러서 펼치기)</sup>
       </summary>
       <ol>
         <li>앱 스토어에서 <a href="https://apps.apple.com/us/app/userscripts/id1463298887" target="_blank" rel="noopener noreferrer">Userscripts</a> 앱을 설치하세요.
