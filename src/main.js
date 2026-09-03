@@ -945,7 +945,7 @@ async function buildOverlayMain() {
       .addP({'id': 'bm-user-charges'}, (_, element) => {
         element.setAttribute('aria-live', 'polite');
       })
-        .addText('Full Charges in ')
+        .addText('완충까지  ')
         .addSpan({'className': 'bm-charge-countdown', 'textContent': '--:--'}, (_, element) => {
           element.dataset.role = 'countdown';
         }).buildElement()
