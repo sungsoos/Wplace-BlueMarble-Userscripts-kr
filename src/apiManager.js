@@ -195,10 +195,8 @@ export default class ApiManager {
     }
     // Updates the text content of the next level field
     const nextPixelElement = document.getElementById('bm-user-nextpixel');
-    const nextPixelPluralElement = document.getElementById('bm-user-nextpixel-plural');
     if (nextPixelElement && nextPixelPluralElement) {
       nextPixelElement.textContent = new Intl.NumberFormat().format(nextLevelPixels);
-      nextPixelPluralElement.textContent = nextLevelPixels == 1 ? '' : 's';
     }
     const nextLevelElement = document.getElementById('bm-user-nextlevel');
     if (nextLevelElement) {
