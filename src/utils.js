@@ -367,18 +367,18 @@ export function areOverlayCoordsFilledAndValid() {
  * The function parameter is (rgb, enabled count, painted enabled count)
  */
 export const sortByOptions = {
-  "총합": ([rgb, paintedCount, totalCount]) => totalCount,
-  "칠해짐": ([rgb, paintedCount, totalCount]) => paintedCount,
-  "남음": ([rgb, paintedCount, totalCount]) => totalCount - paintedCount,
-  "칠해짐 퍼센트": ([rgb, paintedCount, totalCount]) => paintedCount / (totalCount === 0 ? 1 : totalCount),
-  "색 #": ([rgb, paintedCount, totalCount]) => {
+  "total": ([rgb, paintedCount, totalCount]) => totalCount,
+  "painted": ([rgb, paintedCount, totalCount]) => paintedCount,
+  "remaining": ([rgb, paintedCount, totalCount]) => totalCount - paintedCount,
+  "painted%": ([rgb, paintedCount, totalCount]) => paintedCount / (totalCount === 0 ? 1 : totalCount),
+  "color#": ([rgb, paintedCount, totalCount]) => {
     if (rgb === "other") return 361; // Force After All Colors
     if (rgb === "#deface") return -1; // Force Before All Colors
     const tMeta = rgbToMeta.get(rgb);
     if (tMeta && typeof tMeta.id === 'number') return tMeta.id;
     return 361; // Force After All Colors
   },
-  "색상": ([rgb, paintedCount, totalCount]) => {
+  "hue": ([rgb, paintedCount, totalCount]) => {
     if (rgb === "other") return 361; // Force After All Colors
     if (rgb === "#deface") return -1; // Force Before All Colors
     const [r, g, b] = rgb.split(',').map(Number);
@@ -394,13 +394,23 @@ export const sortByOptions = {
       return (((r - g) / delta) + 4) * 60;
     }
   },
-  "명도": ([rgb, paintedCount, totalCount]) => {
+  "luminance": ([rgb, paintedCount, totalCount]) => {
     if (rgb === "other") return 2; // Force After All Colors
     if (rgb === "#deface") return 0; // Force Before All Colors
     const [r, g, b] = rgb.split(',').map(Number);
     return (r * 0.2126 + g * 0.7152 + b * 0.0722) / 255; // Range: 0-1
   },
-}
+};
+
+export const sortByDisplayNames = {
+  total: "총합",
+  painted: "칠해짐",
+  remaining: "남음",
+  "painted%": "칠해짐 퍼센트",
+  "color#": "색 #",
+  hue: "색상",
+  luminance: "명도",
+};
 
 /** Copy the specified text to Clipboard
  * @param {string} text

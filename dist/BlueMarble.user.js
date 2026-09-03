@@ -921,18 +921,18 @@
     return true;
   }
   var sortByOptions = {
-    "\uCD1D\uD569": ([rgb, paintedCount, totalCount]) => totalCount,
-    "\uCE60\uD574\uC9D0": ([rgb, paintedCount, totalCount]) => paintedCount,
-    "\uB0A8\uC74C": ([rgb, paintedCount, totalCount]) => totalCount - paintedCount,
-    "\uCE60\uD574\uC9D0 \uD37C\uC13C\uD2B8": ([rgb, paintedCount, totalCount]) => paintedCount / (totalCount === 0 ? 1 : totalCount),
-    "\uC0C9 #": ([rgb, paintedCount, totalCount]) => {
+    "total": ([rgb, paintedCount, totalCount]) => totalCount,
+    "painted": ([rgb, paintedCount, totalCount]) => paintedCount,
+    "remaining": ([rgb, paintedCount, totalCount]) => totalCount - paintedCount,
+    "painted%": ([rgb, paintedCount, totalCount]) => paintedCount / (totalCount === 0 ? 1 : totalCount),
+    "color#": ([rgb, paintedCount, totalCount]) => {
       if (rgb === "other") return 361;
       if (rgb === "#deface") return -1;
       const tMeta = rgbToMeta.get(rgb);
       if (tMeta && typeof tMeta.id === "number") return tMeta.id;
       return 361;
     },
-    "\uC0C9\uC0C1": ([rgb, paintedCount, totalCount]) => {
+    "hue": ([rgb, paintedCount, totalCount]) => {
       if (rgb === "other") return 361;
       if (rgb === "#deface") return -1;
       const [r, g, b] = rgb.split(",").map(Number);
@@ -948,12 +948,21 @@
         return ((r - g) / delta + 4) * 60;
       }
     },
-    "\uBA85\uB3C4": ([rgb, paintedCount, totalCount]) => {
+    "luminance": ([rgb, paintedCount, totalCount]) => {
       if (rgb === "other") return 2;
       if (rgb === "#deface") return 0;
       const [r, g, b] = rgb.split(",").map(Number);
       return (r * 0.2126 + g * 0.7152 + b * 0.0722) / 255;
     }
+  };
+  var sortByDisplayNames = {
+    total: "\uCD1D\uD569",
+    painted: "\uCE60\uD574\uC9D0",
+    remaining: "\uB0A8\uC74C",
+    "painted%": "\uCE60\uD574\uC9D0 \uD37C\uC13C\uD2B8",
+    "color#": "\uC0C9 #",
+    hue: "\uC0C9\uC0C1",
+    luminance: "\uBA85\uB3C4"
   };
   function copyToClipboard(text) {
     if (navigator.clipboard && typeof navigator.clipboard.writeText === "function") {
@@ -5026,7 +5035,8 @@ Getting Y ${pixelY}-${pixelY + drawSizeY}`);
         order.forEach((o2) => {
           const option = document.createElement("option");
           option.value = `${o.toLowerCase()}-${o2.toLowerCase()}`;
-          option.textContent = `${o[0].toUpperCase() + o.slice(1).toLowerCase()} (${o2}.)`;
+          const displayName = sortByDisplayNames[o] || o;
+          option.textContent = `${displayName} (${o2}.)`;
           if (option.value === currentSortBy) {
             option.selected = true;
           }
@@ -5037,7 +5047,8 @@ Getting Y ${pixelY}-${pixelY + drawSizeY}`);
         templateManager.setSortBy(select.value);
         buildColorFilterList();
         const parts = select.value.split("-");
-        instance.handleDisplayStatus(`\uC0C9\uC0C1 \uC815\uB82C \uAE30\uC900\uC744 "${parts[0][0].toUpperCase() + parts[0].slice(1).toLowerCase()}" ${parts[1]}\uC73C\uB85C \uBC14\uAFE8\uC2B5\uB2C8\uB2E4.`);
+        const displayName = sortByDisplayNames[parts[0]] || parts[0];
+        instance.handleDisplayStatus(`\uC0C9\uC0C1 \uC815\uB82C \uAE30\uC900\uC744 "${displayName}" ${parts[1]}\uC73C\uB85C \uBC14\uAFE8\uC2B5\uB2C8\uB2E4.`);
       });
     }).buildElement().buildElement().addDiv({ "id": "bm-button-colors-container", "style": "display: flex; gap: 6px; margin-top: 3px; margin-bottom: 3px;" }).addButton({ "id": "bm-button-colors-enable-all", "textContent": "\uBAA8\uB450 \uD65C\uC131\uD654" }, (instance, button) => {
       button.onclick = () => {

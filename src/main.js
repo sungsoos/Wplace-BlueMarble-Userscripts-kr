@@ -6,7 +6,7 @@ import Overlay from './Overlay.js';
 // import Observers from './observers.js';
 import ApiManager from './apiManager.js';
 import TemplateManager from './templateManager.js';
-import { consoleLog, consoleWarn, selectAllCoordinateInputs, rgbToMeta, getOverlayCoords, sortByOptions, getCurrentColor } from './utils.js';
+import { consoleLog, consoleWarn, selectAllCoordinateInputs, rgbToMeta, getOverlayCoords, sortByOptions, sortByDisplayNames, getCurrentColor } from './utils.js';
 import { getCenterGeoCoords, getPixelPerWplacePixel, forceRefreshTiles, removeLayer, themeList, setTheme, isMapTilerLoaded, teleportToTileCoords, teleportToGeoCoords, coordsTileCoordsToGeoCoords, coordsGeoCoordsToTileCoords, doAfterMapFound, panMap, setZoom, getCurrentTileSize} from './utilsMaptiler.js';
 // import { getCenterGeoCoords, addTemplate } from './utilsMaptiler.js';
 
@@ -1355,7 +1355,8 @@ async function buildOverlayMain() {
               order.forEach(o2 => {
                 const option = document.createElement('option');
                 option.value = `${o.toLowerCase()}-${o2.toLowerCase()}`;
-                option.textContent = `${o[0].toUpperCase() + o.slice(1).toLowerCase()} (${o2}.)`;
+                const displayName = sortByDisplayNames[o] || o;
+                option.textContent = `${displayName} (${o2}.)`;
                 if (option.value === currentSortBy) { option.selected = true; }
                 select.appendChild(option);
               })
@@ -1364,7 +1365,8 @@ async function buildOverlayMain() {
               templateManager.setSortBy(select.value);
               buildColorFilterList();
               const parts = select.value.split('-');
-              instance.handleDisplayStatus(`색상 정렬 기준을 "${parts[0][0].toUpperCase() + parts[0].slice(1).toLowerCase()}" ${parts[1]}으로 바꿨습니다.`);
+              const displayName = sortByDisplayNames[parts[0]] || parts[0];
+              instance.handleDisplayStatus(`색상 정렬 기준을 "${displayName}" ${parts[1]}으로 바꿨습니다.`);
             })
           }).buildElement()
         .buildElement()
