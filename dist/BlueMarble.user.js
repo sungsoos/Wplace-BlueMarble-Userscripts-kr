@@ -4019,8 +4019,10 @@ Getting Y ${pixelY}-${pixelY + drawSizeY}`);
       userDropletsElement.textContent = new Intl.NumberFormat().format(dataJSON["droplets"]);
     }
     const nextPixelElement = document.getElementById("bm-user-nextpixel");
-    if (nextPixelElement) {
+    const nextPixelPluralElement = document.getElementById("bm-user-nextpixel-plural");
+    if (nextPixelElement && nextPixelPluralElement) {
       nextPixelElement.textContent = new Intl.NumberFormat().format(nextLevelPixels);
+      nextPixelPluralElement.textContent = nextLevelPixels == 1 ? "" : "s";
     }
     const nextLevelElement = document.getElementById("bm-user-nextlevel");
     if (nextLevelElement) {
@@ -4689,7 +4691,7 @@ Getting Y ${pixelY}-${pixelY + drawSizeY}`);
       }
     ).buildElement().addHeader(1, { "textContent": name }).addSmall({ "textContent": ` v${version}` }).buildElement().buildElement().buildElement().addHr().buildElement().addDiv({ "id": "bm-contain-userinfo" }).addP({ "textContent": "\uC774\uB984: " }).addB({ "id": "bm-user-name" }).buildElement().buildElement().addP({ "id": "bm-user-charges" }, (_, element) => {
       element.setAttribute("aria-live", "polite");
-    }).addText("Full Charges in ").addSpan({ "className": "bm-charge-countdown", "textContent": "--:--" }, (_, element) => {
+    }).addText("\uC644\uCDA9\uAE4C\uC9C0  ").addSpan({ "className": "bm-charge-countdown", "textContent": "--:--" }, (_, element) => {
       element.dataset.role = "countdown";
     }).buildElement().addText(" ").addSpan({ "className": "bm-charge-count", "textContent": "(0 / 0)" }, (_, element) => {
       element.dataset.role = "charge-count";
