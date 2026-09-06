@@ -462,7 +462,7 @@ function observeBlack() {
       }
 
       // Attempts to find the "Paint Pixel" element for anchoring
-      const paintPixel = black.parentNode.parentNode.parentNode.parentNode.querySelector('h2');
+      const paintPixel = black.parentNode.parentNode.parentNode.parentNode.parentNode.querySelector('h2');
 
       paintPixel.parentNode?.appendChild(move); // Adds the move button
     }
@@ -642,7 +642,7 @@ function observeBlack() {
         paint2.className = 'btn btn-soft';
         paint2.onclick = () => paint_onclick(false);
         // Attempts to find the "Paint Pixel" element for anchoring
-        const paintPixel = black.parentNode.parentNode.parentNode.parentNode.querySelector('h2');
+        const paintPixel = black.parentNode.parentNode.parentNode.parentNode.parentNode.querySelector('h2');
 
         paintPixel.parentNode?.appendChild(paint); // Adds the paint button
         paintPixel.parentNode?.appendChild(paint2); // Adds the paint button

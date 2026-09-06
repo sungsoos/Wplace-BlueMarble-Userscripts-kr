@@ -4372,7 +4372,7 @@ Getting Y ${pixelY}-${pixelY + drawSizeY}`);
           roundedBox.style.borderBottomRightRadius = shouldMoveUp ? "var(--radius-box)" : "0px";
           this.textContent = shouldMoveUp ? "\uC6C0\uC9C1\uC774\uAE30 \u2193" : "\uC6C0\uC9C1\uC774\uAE30 \u2191";
         };
-        const paintPixel = black.parentNode.parentNode.parentNode.parentNode.querySelector("h2");
+        const paintPixel = black.parentNode.parentNode.parentNode.parentNode.parentNode.querySelector("h2");
         paintPixel.parentNode?.appendChild(move);
       }
       if (templateManager.userSettings?.smartPlace ?? false) {
@@ -4514,7 +4514,7 @@ Getting Y ${pixelY}-${pixelY + drawSizeY}`);
           paint2.textContent = "\uD654\uBA74 \uCC44\uC6B0\uAE30";
           paint2.className = "btn btn-soft";
           paint2.onclick = () => paint_onclick(false);
-          const paintPixel = black.parentNode.parentNode.parentNode.parentNode.querySelector("h2");
+          const paintPixel = black.parentNode.parentNode.parentNode.parentNode.parentNode.querySelector("h2");
           paintPixel.parentNode?.appendChild(paint);
           paintPixel.parentNode?.appendChild(paint2);
         }
