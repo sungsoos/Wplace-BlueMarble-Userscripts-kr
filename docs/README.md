@@ -63,7 +63,7 @@
 
 <h1>블루 마블</h1>
 <a href="https://status.wplace.lol" target="_blank" rel="noopener noreferrer"><img alt="Wplace 상태" src="https://status.wplace.lol/badge/_/status?labelColor=5f5f5f&color=&style=flat&label=Wplace%20%EC%83%81%ED%83%9C"></a>
-<a href="" target="_blank" rel="noopener noreferrer"><img alt="최신 버전" src="https://img.shields.io/badge/Latest_Version-0.87.20-lightblue?style=flat&label=%EC%B5%9C%EC%8B%A0%20%EB%B2%84%EC%A0%84
+<a href="" target="_blank" rel="noopener noreferrer"><img alt="최신 버전" src="https://img.shields.io/badge/Latest_Version-0.87.21-lightblue?style=flat&label=%EC%B5%9C%EC%8B%A0%20%EB%B2%84%EC%A0%84
 "></a>
 <a href="https://github.com/sungsoos/Wplace-BlueMarble-Userscripts-kr/releases" target="_blank" rel="noopener noreferrer"><img alt="최신 릴리즈" src="https://img.shields.io/github/v/release/sungsoos/Wplace-BlueMarble-Userscripts-kr?sort=semver&style=flat&label=%EC%B5%9C%EC%8B%A0%20%EB%A6%B4%EB%A6%AC%EC%A6%88&color=blue"></a>
 <a href="https://github.com/sungsoos/Wplace-BlueMarble-Userscripts-kr/blob/custom-improve/LICENSE.txt" target="_blank" rel="noopener noreferrer"><img alt="소프트웨어 라이선스: MPL-2.0" src="https://img.shields.io/badge/Software_License-MPL--2.0-slateblue?style=flat&label=%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%20%EB%9D%BC%EC%9D%B4%EC%84%A0%EC%8A%A4"></a>
@@ -73,7 +73,7 @@
 <a href="" target="_blank" rel="noopener noreferrer"><img alt="총 패치" src="https://img.shields.io/badge/%EC%B4%9D%20%ED%8C%A8%EC%B9%98%EB%93%A4-503-black?style=flat"></a>
 <a href="" target="_blank" rel="noopener noreferrer"><img alt="총 코드 줄" src="https://tokei.rs/b1/github/sungsoos/Wplace-BlueMarble-Userscripts-kr?category=code"></a>
 <a href="" target="_blank" rel="noopener noreferrer"><img alt="총 주석" src="https://tokei.rs/b1/github/sungsoos/Wplace-BlueMarble-Userscripts-kr?category=comments"></a>
-<a href="" target="_blank" rel="noopener noreferrer"><img alt="압축률" src="https://img.shields.io/badge/%EC%95%95%EC%B6%95%EB%A5%A0-68.34%25-blue"></a>
+<a href="" target="_blank" rel="noopener noreferrer"><img alt="압축률" src="https://img.shields.io/badge/%EC%95%95%EC%B6%95%EB%A5%A0-68.35%25-blue"></a>
 <a href="" target="_blank" rel="noopener noreferrer"><img alt="리포지토리 크기" src="https://img.shields.io/github/repo-size/sungsoos/Wplace-BlueMarble-Userscripts-kr?label=%EB%A6%AC%ED%8F%AC%EC%A7%80%ED%86%A0%EB%A6%AC%20%ED%81%AC%EA%B8%B0"></a>
 <a href="" target="_blank" rel="noopener noreferrer"><img alt="방문자" src="https://img.shields.io/badge/%EB%B0%A9%EB%AC%B8%EC%9E%90-439_667-gainsboro?style=flat"></a>
 <a href="" target="_blank" rel="noopener noreferrer"><img alt="다운로드 수" src="https://img.shields.io/github/downloads/sungsoos/Wplace-BlueMarble-Userscripts-kr/total.svg?label=%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C%20%EC%88%98"></a>
