@@ -24,7 +24,7 @@ import { themeList, addTemplateCanvas, removeLayer, doAfterMapFound, forceRefres
  *     },
  *     "1 $Z": {
  *       "name": "My Template",
- *       "URL": "https://github.com/SwingTheVine/Wplace-BlueMarble/blob/main/dist/assets/Favicon.png",
+ *       "URL": "https://github.com/sungsoos/Wplace-BlueMarble-Userscripts-kr/custom-improve/dist/assets/Favicon.png",
  *       "URLType": "template",
  *       "enabled": false,
  *       "tiles": {
