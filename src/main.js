@@ -462,7 +462,7 @@ function observeBlack() {
       }
 
       // Attempts to find the "Paint Pixel" element for anchoring
-        const fourthParent = black.parentNode.parentNode.parentNode.parentNode;
+      const fourthParent = black.parentNode.parentNode.parentNode.parentNode;
       const fifthParent = fourthParent.parentNode;
       const paintPixel = fourthParent.querySelector('h2');
       const container = paintPixel ? paintPixel.parentNode : fifthParent.querySelector('h2 + div');
@@ -651,7 +651,7 @@ function observeBlack() {
         const fifthParent = fourthParent.parentNode;
         const paintPixel = fourthParent.querySelector('h2');
         const container = paintPixel ? paintPixel.parentNode : fifthParent.querySelector('h2 + div');
-
+        
         if (container) {
           container.appendChild(paint); // Adds the paint button
           container.appendChild(paint2); // Adds the paint button
